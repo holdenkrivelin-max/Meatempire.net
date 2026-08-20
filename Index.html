@@ -87,7 +87,7 @@
     .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(36px, 6vw, 60px); font-weight: 300; margin-bottom: 28px; line-height: 1.2; letter-spacing: 0.02em; }
     .section.dark .section-title { color: var(--cream); }
     .section-desc { font-size: 15px; color: var(--muted); margin-bottom: 32px; line-height: 1.85; max-width: 700px; }
-    .section.dark .section-desc { color: rgba(247,243,236,0.8); }
+    .section.dark .section-desc { color: var(--cream); opacity: 0.8; }
     
     .proof-grid { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 24px; margin: 60px 0; }
     .proof-box { text-align: center; padding: 28px; background: white; border-radius: 6px; border: 1px solid var(--border-color); cursor: pointer; transition: all 0.3s ease; }
@@ -192,12 +192,37 @@
 <nav>
   <a href="#" class="nav-logo">Meat<strong>empire</strong></a>
   <div class="nav-controls">
+    <a href="#how-it-works" style="font-size:13px;color:var(--dark);text-decoration:none;font-weight:500;" class="nav-section-link">How It Works</a>
+    <a href="#who-its-for" style="font-size:13px;color:var(--dark);text-decoration:none;font-weight:500;" class="nav-section-link">Who It's For</a>
+    <a href="#investors" style="font-size:13px;color:var(--dark);text-decoration:none;font-weight:500;" class="nav-section-link">Investors</a>
     <button class="mode-toggle" onclick="toggleDarkMode()" id="modeBtn">🌙<span class="mode-label"> Dark</span></button>
     <button id="a11yToggle" onclick="toggleLargeText()" aria-label="Toggle larger text" title="Larger text" style="background:transparent;border:1px solid var(--border-color);color:var(--dark);width:34px;height:34px;border-radius:50%;font-family:'Jost',sans-serif;font-weight:600;font-size:13px;cursor:pointer;flex-shrink:0;">Aa</button>
     <div class="city-selector" onclick="openModal('citySelect')">📍 NYC ▼</div>
     <button class="nav-btn" onclick="openModal('firstStep')"><span class="cta-long">Take the First Step</span><span class="cta-short">Start</span></button>
+    <button id="mobileMenuBtn" onclick="toggleMobileMenu()" aria-label="Menu" style="background:transparent;border:1px solid var(--border-color);color:var(--dark);width:34px;height:34px;border-radius:50%;font-size:16px;cursor:pointer;flex-shrink:0;display:none;">☰</button>
   </div>
 </nav>
+
+<div id="mobileMenuPanel" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--cream);z-index:999;padding:100px 32px 40px;">
+  <button onclick="toggleMobileMenu()" aria-label="Close menu" style="position:absolute;top:24px;right:24px;background:transparent;border:1px solid var(--border-color);color:var(--dark);width:38px;height:38px;border-radius:50%;font-size:18px;cursor:pointer;">×</button>
+  <div style="display:flex;flex-direction:column;gap:28px;align-items:center;text-align:center;">
+    <a href="#how-it-works" onclick="toggleMobileMenu()" style="font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--dark);text-decoration:none;">How It Works</a>
+    <a href="#who-its-for" onclick="toggleMobileMenu()" style="font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--dark);text-decoration:none;">Who It's For</a>
+    <a href="#investors" onclick="toggleMobileMenu()" style="font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--dark);text-decoration:none;">Investors</a>
+    <button class="btn btn-gold" style="margin-top:16px;" onclick="toggleMobileMenu(); openModal('firstStep')">Take the First Step →</button>
+  </div>
+</div>
+<style>
+  body.dark-mode #mobileMenuPanel{background:var(--dark) !important;}
+  body.dark-mode #mobileMenuPanel a{color:var(--cream) !important;}
+  body.menu-open{overflow:hidden;}
+  @media(max-width:899px){#mobileMenuBtn{display:inline-block !important;}}
+</style>
+<style>
+  .nav-section-link{display:none;}
+  @media(min-width:900px){.nav-section-link{display:inline-block;}}
+  body.dark-mode .nav-section-link{color:var(--cream) !important;}
+</style>
 
 <div class="hero">
   <p class="hero-eyebrow">FOR EVERYONE</p>
@@ -208,39 +233,98 @@
 
 <div class="section beige">
   <div class="container">
-    <p class="section-eyebrow">IT'S REAL</p>
-    <h2 class="section-title">The movement is already moving</h2>
-    
-    <div class="proof-grid">
-      <div class="proof-box" onclick="openModal('viewCreators')">
-        <div class="proof-number">23+</div>
-        <div class="proof-label">Creators Building</div>
-        <div class="proof-desc">See who's creating</div>
+    <p class="section-eyebrow">EARLY STAGE</p>
+    <h2 class="section-title">This is just starting.</h2>
+    <p class="hero-body" style="margin-left:auto;margin-right:auto;">MEAT Empire doesn't have a roster of case studies yet — because it's brand new. What it has is a founder who built the first thing anyway, and an open door for whoever's next.</p>
+    <div style="text-align:center;margin-top:32px;">
+      <button class="btn btn-gold" onclick="openModal('firstStep')">Be One of the First →</button>
+    </div>
+  </div>
+</div>
+
+<div class="section" id="how-it-works">
+  <div class="container">
+    <p class="section-eyebrow">THE PROCESS</p>
+    <h2 class="section-title">How it works.</h2>
+    <p class="section-desc">No pitch deck required. Just an idea and a willingness to test it.</p>
+
+    <div class="process-grid" style="cursor:default;">
+      <div class="process-step" style="cursor:default;">
+        <div class="process-day">01</div>
+        <div class="process-title">Bring your idea</div>
+        <div class="process-desc">Half-formed is fine. You don't need a business plan — you need something you keep thinking about.</div>
       </div>
-      <div class="proof-box" onclick="openModal('viewExperiences')">
-        <div class="proof-number">47</div>
-        <div class="proof-label">Experiences Hosted</div>
-        <div class="proof-desc">Browse what's launched</div>
+      <div class="process-step" style="cursor:default;">
+        <div class="process-day">02</div>
+        <div class="process-title">Shape the first step</div>
+        <div class="process-desc">We help you turn the idea into one small, testable move instead of a giant leap.</div>
       </div>
-      <div class="proof-box" onclick="openModal('viewRevenue')">
-        <div class="proof-number">$324K</div>
-        <div class="proof-label">Creator Revenue</div>
-        <div class="proof-desc">Real money generated</div>
+      <div class="process-step" style="cursor:default;">
+        <div class="process-day">03</div>
+        <div class="process-title">Test it with real people</div>
+        <div class="process-desc">Low stakes, real feedback — before you've committed money to something that might not work.</div>
       </div>
-      <div class="proof-box" onclick="openModal('viewSatisfaction')">
-        <div class="proof-number">87%</div>
-        <div class="proof-label">Satisfaction Rate</div>
-        <div class="proof-desc">Would launch again</div>
+      <div class="process-step" style="cursor:default;">
+        <div class="process-day">04</div>
+        <div class="process-title">Build from there</div>
+        <div class="process-desc">If it resonates, it grows into something real inside the MEAT Universe — connected, not alone.</div>
       </div>
     </div>
-    <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:clamp(20px,2.8vw,26px);color:var(--gold);text-align:center;margin-top:40px;">Let's MEAT.</p>
+  </div>
+</div>
+
+<div class="section beige" id="who-its-for">
+  <div class="container">
+    <p class="section-eyebrow">BUILT FOR</p>
+    <h2 class="section-title">Who it's for.</h2>
+    <p class="section-desc">If you've got an idea and nowhere to bring it, this is for you.</p>
+
+    <div class="marketplace-grid" style="cursor:default;">
+      <div class="collab-card" style="cursor:default;">
+        <div class="collab-avatar">C</div>
+        <div class="collab-name">Chefs</div>
+        <div class="collab-role">Test a concept</div>
+        <div class="collab-desc">Before you sign a lease you can't get out of, test the concept on real people first.</div>
+      </div>
+      <div class="collab-card" style="cursor:default;">
+        <div class="collab-avatar">O</div>
+        <div class="collab-name">Operators</div>
+        <div class="collab-role">Find your room</div>
+        <div class="collab-desc">Access to venues, chefs, and a network built for launching things, not just running them.</div>
+      </div>
+      <div class="collab-card" style="cursor:default;">
+        <div class="collab-avatar">F</div>
+        <div class="collab-name">Foodies</div>
+        <div class="collab-role">Shape what's next</div>
+        <div class="collab-desc">Be in the room before an idea becomes a restaurant everyone's talking about.</div>
+      </div>
+      <div class="collab-card" style="cursor:default;">
+        <div class="collab-avatar">B</div>
+        <div class="collab-name">Brand Builders</div>
+        <div class="collab-role">Build with us</div>
+        <div class="collab-desc">If your idea isn't food at all, MEAT's infrastructure and audience still might be the right place to build it.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section dark" id="investors">
+  <div class="container">
+    <p class="section-eyebrow">FOR INVESTORS</p>
+    <h2 class="section-title">The build layer.</h2>
+    <p class="section-desc" style="max-width:640px;">MEAT Empire is the creation layer of the MEAT Universe — the infrastructure that lets chefs, operators, foodies, and builders test and launch ideas with real support behind them, instead of alone and unfunded.</p>
+    <p class="section-desc" style="max-width:640px;">It's early. There's no roster of funded creators yet, no revenue to report. What exists is the model: give people a lower-risk way to test real ideas with real people, and let the ones that work grow into something bigger — with MEAT Hospitality Group already proving the core loop works in its own dinners.</p>
+    <p class="section-desc" style="max-width:640px;">Every part of MEAT is built to strengthen the others. Empire doesn't need to be the highest-margin piece of the business to be a critical one — it's how the ecosystem keeps generating new things worth being part of.</p>
+    <div style="margin-top:8px;">
+      <button class="btn btn-gold" onclick="openModal('firstStep')">Talk to Us →</button>
+    </div>
   </div>
 </div>
 
 <div class="section">
   <div class="container">
-    <p class="section-eyebrow">THEY STARTED LIKE YOU</p>
-    <h2 class="section-title">Stories from creators who were afraid</h2>
+    <p class="section-eyebrow">THE FIRST STORY</p>
+    <h2 class="section-title">One creator who was afraid, and built anyway</h2>
     
     <div class="stories-grid">
       <div class="story-card" onclick="openModal('learnHolden')">
@@ -248,23 +332,10 @@
         <div class="story-name">Holden</div>
         <div class="story-title">Founder • MEAT Empire</div>
         <div class="story-before"><strong>Before:</strong> "I have an idea for a marketplace where chefs, operators, and foodies can come and collab on the next big idea in hospitality. I'm calling it MEAT."</div>
-        <div class="story-after"><strong>After:</strong> Built the platform. Shipped Dinner 001. $8.4K revenue.</div>
-      </div>
-      <div class="story-card" onclick="openModal('learnMaya')">
-        <div class="story-avatar">M</div>
-        <div class="story-name">Maya</div>
-        <div class="story-title">Creator • Wine Collaboration</div>
-        <div class="story-before"><strong>Before:</strong> "I'm a sommelier but I've never run my own experience. What if nobody wants to come?"</div>
-        <div class="story-after"><strong>After:</strong> Launched wine pairing dinners with 3 chefs. Sold out in 2 weeks.</div>
-      </div>
-      <div class="story-card" onclick="openModal('learnAlex')">
-        <div class="story-avatar">A</div>
-        <div class="story-name">Alex</div>
-        <div class="story-title">Creator • Los Angeles</div>
-        <div class="story-before"><strong>Before:</strong> "I have an idea but I don't know any chefs or people. Starting from zero."</div>
-        <div class="story-after"><strong>After:</strong> Connected with 4 collaborators. Launching concept in 3 weeks.</div>
+        <div class="story-after"><strong>After:</strong> Built the platform. Hosted the first dinner. Kept going.</div>
       </div>
     </div>
+    <p style="text-align:center;font-size:14px;color:var(--muted);margin-top:24px;">This section grows as real creators build real things. Yours could be next.</p>
   </div>
 </div>
 
@@ -290,7 +361,7 @@
     <div style="display:flex;gap:32px;justify-content:center;flex-wrap:wrap;">
       <a href="https://meathospitalitygroup.com" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:none;font-size:14px;font-weight:500;">MEAT Hospitality Group →</a>
       <a href="https://meatuniverse.co" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:none;font-size:14px;font-weight:500;">MEAT Universe →</a>
-      <a href="https://storemhg.com" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:none;font-size:14px;font-weight:500;">Just Keep Meating →</a>
+      <a href="https://storemhg.com" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:none;font-size:14px;font-weight:500;">MEAT Hospitality Group Store →</a>
     </div>
     <p style="font-size:13px;opacity:.7;line-height:1.7;max-width:520px;margin:22px auto 0;">MEAT Empire is the build layer. MEAT Universe is where people connect. MEAT Hospitality Group is proof it works.</p>
   </div>
@@ -315,50 +386,6 @@
   </div>
 </div>
 
-<div class="modal" id="viewCreators">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h2 class="modal-title">Creators</h2>
-      <button class="modal-close" onclick="closeModal('viewCreators')">×</button>
-    </div>
-    <p style="font-size:13px; color:var(--muted); margin-bottom:24px;">Real people shipping real concepts.</p>
-    <div style="text-align:center;"><button class="btn btn-gold" onclick="closeModal('viewCreators'); openModal('firstStep')">Let's MEAT</button></div>
-  </div>
-</div>
-
-<div class="modal" id="viewExperiences">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h2 class="modal-title">47 Experiences</h2>
-      <button class="modal-close" onclick="closeModal('viewExperiences')">×</button>
-    </div>
-    <p style="font-size:13px; color:var(--muted); margin-bottom:24px;">Dinners, workshops, collaborations, and more.</p>
-    <div style="text-align:center;"><button class="btn btn-gold" onclick="closeModal('viewExperiences'); openModal('firstStep')">Create Your Own</button></div>
-  </div>
-</div>
-
-<div class="modal" id="viewRevenue">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h2 class="modal-title">$324K Revenue</h2>
-      <button class="modal-close" onclick="closeModal('viewRevenue')">×</button>
-    </div>
-    <p style="font-size:13px; color:var(--muted); margin-bottom:24px;">70% to creators. Transparent economics.</p>
-    <div style="text-align:center;"><button class="btn btn-gold" onclick="closeModal('viewRevenue'); openModal('firstStep')">Start Earning</button></div>
-  </div>
-</div>
-
-<div class="modal" id="viewSatisfaction">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h2 class="modal-title">87% Satisfaction</h2>
-      <button class="modal-close" onclick="closeModal('viewSatisfaction')">×</button>
-    </div>
-    <p style="font-size:13px; color:var(--muted); margin-bottom:24px;">Creators would launch again.</p>
-    <div style="text-align:center;"><button class="btn btn-gold" onclick="closeModal('viewSatisfaction'); openModal('firstStep')">Let's MEAT</button></div>
-  </div>
-</div>
-
 <div class="modal" id="learnHolden">
   <div class="modal-content">
     <div class="modal-header">
@@ -366,32 +393,8 @@
       <button class="modal-close" onclick="closeModal('learnHolden')">×</button>
     </div>
     <p style="font-size:13px; color:var(--muted); margin-bottom:16px;"><strong>Fear:</strong> "What if it doesn't work?"</p>
-    <p style="font-size:13px; color:var(--muted); margin-bottom:16px;"><strong>Action:</strong> Built it anyway. $8.4K revenue. Now scaling worldwide.</p>
+    <p style="font-size:13px; color:var(--muted); margin-bottom:16px;"><strong>Action:</strong> Built it anyway. Hosted the first dinner. Kept going.</p>
     <div style="text-align:center; margin-top:24px;"><button class="btn btn-gold" onclick="closeModal('learnHolden'); openModal('firstStep')">I'm Ready</button></div>
-  </div>
-</div>
-
-<div class="modal" id="learnMaya">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h2 class="modal-title">Maya's Story</h2>
-      <button class="modal-close" onclick="closeModal('learnMaya')">×</button>
-    </div>
-    <p style="font-size:13px; color:var(--muted); margin-bottom:16px;"><strong>Fear:</strong> "I've never run my own experience."</p>
-    <p style="font-size:13px; color:var(--muted); margin-bottom:16px;"><strong>Action:</strong> Launched wine pairings. Sold out in 2 weeks.</p>
-    <div style="text-align:center; margin-top:24px;"><button class="btn btn-gold" onclick="closeModal('learnMaya'); openModal('firstStep')">I'm Ready</button></div>
-  </div>
-</div>
-
-<div class="modal" id="learnAlex">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h2 class="modal-title">Alex's Story</h2>
-      <button class="modal-close" onclick="closeModal('learnAlex')">×</button>
-    </div>
-    <p style="font-size:13px; color:var(--muted); margin-bottom:16px;"><strong>Fear:</strong> "I don't know anyone."</p>
-    <p style="font-size:13px; color:var(--muted); margin-bottom:16px;"><strong>Action:</strong> Joined MEAT. Connected with 4 collaborators. Launching in 3 weeks.</p>
-    <div style="text-align:center; margin-top:24px;"><button class="btn btn-gold" onclick="closeModal('learnAlex'); openModal('firstStep')">I'm Ready</button></div>
   </div>
 </div>
 
@@ -455,6 +458,18 @@ function initializeDarkMode() {
     btn.innerHTML = '☀️<span class="mode-label"> Light</span>';
   } else {
     btn.innerHTML = '🌙<span class="mode-label"> Dark</span>';
+  }
+}
+
+function toggleMobileMenu() {
+  const panel = document.getElementById('mobileMenuPanel');
+  const isOpen = panel.style.display === 'flex' || panel.style.display === 'block';
+  if (isOpen) {
+    panel.style.display = 'none';
+    document.body.classList.remove('menu-open');
+  } else {
+    panel.style.display = 'block';
+    document.body.classList.add('menu-open');
   }
 }
 
