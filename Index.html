@@ -60,10 +60,41 @@
     body.dark-mode .nav-logo { color: var(--cream); }
     .nav-logo strong { color: var(--gold); }
     .nav-controls { display: flex; gap: 16px; align-items: center; }
+    @media(min-width:900px){ .nav-controls{ gap: 28px; } }
+    .nav-drop{position:relative;display:inline-block;}
+    .nav-drop>summary{
+      list-style:none;cursor:pointer;font-size:13px;color:var(--dark);font-weight:500;
+      font-family:'Jost',sans-serif;display:flex;align-items:center;gap:4px;
+    }
+    .nav-drop>summary::-webkit-details-marker{display:none;}
+    .nav-drop>summary:after{content:'▾';font-size:9px;color:var(--gold);}
+    .nav-drop:hover>summary,.nav-drop[open]>summary{color:var(--gold);}
+    .nav-drop-menu{
+      position:absolute;top:100%;left:50%;transform:translateX(-50%);
+      background:var(--cream);border:1px solid var(--border-color);
+      box-shadow:0 16px 40px rgba(0,0,0,0.18);padding:14px 0;margin-top:14px;
+      min-width:200px;z-index:200;
+    }
+    .nav-drop-menu button{
+      display:block;width:100%;text-align:left;padding:10px 20px;white-space:nowrap;
+      font-size:12px;letter-spacing:.08em;color:var(--muted);background:none;border:none;cursor:pointer;
+      font-family:'Jost',sans-serif;transition:color .15s,background .15s;
+    }
+    .nav-drop-menu button:hover{color:var(--gold);background:rgba(122,146,112,0.08);}
+    .nav-drop-subhead{
+      padding:8px 20px 4px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+      color:var(--dark);opacity:0.7;font-family:'Jost',sans-serif;font-weight:600;
+    }
+    .nav-drop-menu .nav-drop-subitem{padding-left:30px !important;}
+    .nav-drop-divider{height:1px;background:var(--border-color);margin:8px 14px;}
+    body.dark-mode .nav-drop-menu{background:#1a1a1a;}
+    .nav-drop{display:none;}
+    @media(min-width:900px){.nav-drop{display:inline-block;}}
     .cta-short { display: none; }
     .cta-long { display: inline; }
     .mode-toggle { background: none; border: 1px solid var(--border-color); color: var(--dark); padding: 8px 12px; font-size: 14px; cursor: pointer; border-radius: 4px; font-family: 'Jost', sans-serif; font-weight: 600; transition: all 0.3s ease; }
     body.dark-mode .mode-toggle { border-color: rgba(247,243,236,0.2); color: var(--cream); }
+    body.dark-mode #firstStep-error { color: #E08A85 !important; }
     .nav-btn { background: #6FA85A; border: none; color: #F7F3EC; padding: 10px 20px; font-family: 'Jost', sans-serif; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600; cursor: pointer; border-radius: 4px; }
     
     .city-selector { font-size: 12px; color: var(--muted); border: 1px solid var(--border-color); padding: 6px 12px; border-radius: 4px; background: white; cursor: pointer; }
@@ -193,9 +224,41 @@
 <nav>
   <a href="#" class="nav-logo">Meat<strong>empire</strong></a>
   <div class="nav-controls">
-    <a href="#how-it-works" style="font-size:13px;color:var(--dark);text-decoration:none;font-weight:500;" class="nav-section-link">How It Works</a>
-    <a href="#who-its-for" style="font-size:13px;color:var(--dark);text-decoration:none;font-weight:500;" class="nav-section-link">Who It's For</a>
-    <a href="#investors" style="font-size:13px;color:var(--dark);text-decoration:none;font-weight:500;" class="nav-section-link">Investors</a>
+    <button class="nav-section-link" style="background:none;border:1px solid var(--gold);border-radius:14px;padding:5px 14px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);cursor:pointer;font-family:'Jost',sans-serif;font-weight:500;" onclick="document.getElementById('start-here').scrollIntoView({behavior:'smooth'})">New Here?</button>
+
+    <details class="nav-drop">
+      <summary>MEAT</summary>
+      <div class="nav-drop-menu">
+        <p class="nav-drop-subhead">Experiences</p>
+        <button class="nav-drop-subitem" onclick="document.getElementById('ground-floor').scrollIntoView({behavior:'smooth'})">Chef Features</button>
+        <button class="nav-drop-subitem" onclick="document.getElementById('ground-floor').scrollIntoView({behavior:'smooth'})">From the Ground Floor</button>
+        <div class="nav-drop-divider"></div>
+        <button onclick="document.getElementById('meat-circles').scrollIntoView({behavior:'smooth'})">MEAT Circles</button>
+        <button onclick="document.getElementById('meat-next').scrollIntoView({behavior:'smooth'})">MEAT Next</button>
+        <button onclick="document.getElementById('meat-moments').scrollIntoView({behavior:'smooth'})">MEAT Moments</button>
+        <button onclick="document.getElementById('platform').scrollIntoView({behavior:'smooth'})">MEAT App</button>
+      </div>
+    </details>
+
+    <details class="nav-drop">
+      <summary>About</summary>
+      <div class="nav-drop-menu">
+        <button onclick="document.getElementById('how-it-works').scrollIntoView({behavior:'smooth'})">The Process</button>
+        <button onclick="document.getElementById('who-its-for').scrollIntoView({behavior:'smooth'})">Who It's For</button>
+        <button onclick="document.getElementById('story').scrollIntoView({behavior:'smooth'})">The First Story</button>
+      </div>
+    </details>
+
+    <details class="nav-drop">
+      <summary>Build With MEAT</summary>
+      <div class="nav-drop-menu">
+        <button onclick="document.getElementById('investors').scrollIntoView({behavior:'smooth'})">Investors</button>
+        <button onclick="document.getElementById('your-move').scrollIntoView({behavior:'smooth'})">Your Move</button>
+      </div>
+    </details>
+
+    <a href="https://storemhg.com" target="_blank" rel="noopener" class="nav-section-link" style="font-size:13px;color:var(--dark);text-decoration:none;font-weight:500;">Shop</a>
+
     <button class="mode-toggle" onclick="toggleDarkMode()" id="modeBtn">🌙<span class="mode-label"> Dark</span></button>
     <button id="a11yToggle" onclick="toggleLargeText()" aria-label="Toggle larger text" title="Larger text" style="background:transparent;border:1px solid var(--border-color);color:var(--dark);width:34px;height:34px;border-radius:50%;font-family:'Jost',sans-serif;font-weight:600;font-size:13px;cursor:pointer;flex-shrink:0;">Aa</button>
     <div class="city-selector" onclick="openModal('citySelect')">📍 NYC ▼</div>
@@ -204,13 +267,32 @@
   </div>
 </nav>
 
-<div id="mobileMenuPanel" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--cream);z-index:999;padding:100px 32px 40px;">
+<div id="mobileMenuPanel" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--cream);z-index:999;padding:100px 32px 40px;overflow-y:auto;">
   <button onclick="toggleMobileMenu()" aria-label="Close menu" style="position:absolute;top:24px;right:24px;background:transparent;border:1px solid var(--border-color);color:var(--dark);width:38px;height:38px;border-radius:50%;font-size:18px;cursor:pointer;">×</button>
-  <div style="display:flex;flex-direction:column;gap:28px;align-items:center;text-align:center;">
-    <a href="#how-it-works" onclick="toggleMobileMenu()" style="font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--dark);text-decoration:none;">How It Works</a>
-    <a href="#who-its-for" onclick="toggleMobileMenu()" style="font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--dark);text-decoration:none;">Who It's For</a>
-    <a href="#investors" onclick="toggleMobileMenu()" style="font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--dark);text-decoration:none;">Investors</a>
-    <button class="btn btn-gold" style="margin-top:16px;" onclick="toggleMobileMenu(); openModal('firstStep')">Take the First Step →</button>
+  <div style="display:flex;flex-direction:column;gap:6px;text-align:left;max-width:360px;margin:0 auto;">
+    <button onclick="toggleMobileMenu(); document.getElementById('start-here').scrollIntoView({behavior:'smooth'})" style="background:none;border:1px solid var(--gold);border-radius:16px;padding:8px 16px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);font-family:'Jost',sans-serif;font-weight:500;margin-bottom:20px;align-self:flex-start;">New Here? Start Here →</button>
+
+    <p style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin:8px 0 4px;font-weight:600;">MEAT</p>
+    <a href="javascript:void(0)" onclick="toggleMobileMenu(); document.getElementById('ground-floor').scrollIntoView({behavior:'smooth'})" style="font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--dark);text-decoration:none;padding:8px 0;">Chef Features</a>
+    <a href="javascript:void(0)" onclick="toggleMobileMenu(); document.getElementById('ground-floor').scrollIntoView({behavior:'smooth'})" style="font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--dark);text-decoration:none;padding:8px 0;">From the Ground Floor</a>
+    <a href="javascript:void(0)" onclick="toggleMobileMenu(); document.getElementById('meat-circles').scrollIntoView({behavior:'smooth'})" style="font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--dark);text-decoration:none;padding:8px 0;">MEAT Circles</a>
+    <a href="javascript:void(0)" onclick="toggleMobileMenu(); document.getElementById('meat-next').scrollIntoView({behavior:'smooth'})" style="font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--dark);text-decoration:none;padding:8px 0;">MEAT Next</a>
+    <a href="javascript:void(0)" onclick="toggleMobileMenu(); document.getElementById('meat-moments').scrollIntoView({behavior:'smooth'})" style="font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--dark);text-decoration:none;padding:8px 0;">MEAT Moments</a>
+    <a href="javascript:void(0)" onclick="toggleMobileMenu(); document.getElementById('platform').scrollIntoView({behavior:'smooth'})" style="font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--dark);text-decoration:none;padding:8px 0;">MEAT App</a>
+
+    <p style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin:20px 0 4px;font-weight:600;">About</p>
+    <a href="javascript:void(0)" onclick="toggleMobileMenu(); document.getElementById('how-it-works').scrollIntoView({behavior:'smooth'})" style="font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--dark);text-decoration:none;padding:8px 0;">The Process</a>
+    <a href="javascript:void(0)" onclick="toggleMobileMenu(); document.getElementById('who-its-for').scrollIntoView({behavior:'smooth'})" style="font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--dark);text-decoration:none;padding:8px 0;">Who It's For</a>
+    <a href="javascript:void(0)" onclick="toggleMobileMenu(); document.getElementById('story').scrollIntoView({behavior:'smooth'})" style="font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--dark);text-decoration:none;padding:8px 0;">The First Story</a>
+
+    <p style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin:20px 0 4px;font-weight:600;">Build With MEAT</p>
+    <a href="javascript:void(0)" onclick="toggleMobileMenu(); document.getElementById('investors').scrollIntoView({behavior:'smooth'})" style="font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--dark);text-decoration:none;padding:8px 0;">Investors</a>
+    <a href="javascript:void(0)" onclick="toggleMobileMenu(); document.getElementById('your-move').scrollIntoView({behavior:'smooth'})" style="font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--dark);text-decoration:none;padding:8px 0;">Your Move</a>
+
+    <p style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin:20px 0 4px;font-weight:600;">Shop</p>
+    <a href="https://storemhg.com" target="_blank" rel="noopener" style="font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--dark);text-decoration:none;padding:8px 0;">Store</a>
+
+    <button class="btn btn-gold" style="margin-top:24px;" onclick="toggleMobileMenu(); openModal('firstStep')">Take the First Step →</button>
   </div>
 </div>
 <style>
@@ -230,12 +312,52 @@
   <h1 class="hero-main">You have an idea.<br><em>That's enough.</em></h1>
   <p class="hero-body">You don't need permission. You don't need to be ready. You don't need years of experience. You need an idea and the willingness to take one step. MEAT Empire gives you everything else.</p>
 
-  <div style="max-width:520px;margin:28px auto 0;padding:20px 24px;border:1px solid var(--border-color);text-align:left;">
+  <p style="font-family:'Jost',sans-serif;font-weight:600;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-top:24px;">MEAT — Make Every Action Count</p>
+  <p style="font-size:12px;letter-spacing:.08em;color:var(--muted);margin-top:6px;">Connect · Plan · Move · Fuel · Grow · Make Impact</p>
+
+  <div style="max-width:520px;margin:20px auto 0;padding:20px 24px;border:1px solid var(--border-color);text-align:left;">
     <p style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;text-align:center;">Empire, in One Breath</p>
     <p style="font-size:14px;color:var(--muted);line-height:1.85;">Bring a half-formed idea. We help you shape a first step and test it with real people, low stakes. If it works, it grows into something real — with MEAT's infrastructure behind you, not alone.</p>
   </div>
 
   <button class="hero-cta" onclick="openModal('firstStep')">Let's MEAT →</button>
+</div>
+
+<div class="section" id="start-here">
+  <div class="container" style="max-width:680px;">
+    <p class="section-eyebrow" style="text-align:center;">New Here?</p>
+    <h2 class="section-title" style="text-align:center;">Start <em style="font-style:italic;color:var(--gold);">here.</em></h2>
+
+    <div style="margin-top:40px;margin-bottom:36px;">
+      <p style="font-family:'Jost',sans-serif;font-weight:700;font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">01 · What is this?</p>
+      <p style="font-size:16.5px;color:var(--dark);opacity:0.85;line-height:1.85;">MEAT Empire is where chefs, operators, foodies, and builders bring an idea they want to build — and test it with real people before spending real money.</p>
+    </div>
+
+    <div style="margin-bottom:36px;">
+      <p style="font-family:'Jost',sans-serif;font-weight:700;font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">02 · Oh, I get it.</p>
+      <p style="font-size:16.5px;color:var(--dark);opacity:0.85;line-height:1.85;">Bring a half-formed idea. We help you shape it into one small, testable first step, and put it in front of real people for real feedback. If it resonates, it grows into something real — with MEAT's infrastructure behind you, not alone.</p>
+    </div>
+
+    <div style="margin-bottom:36px;">
+      <p style="font-family:'Jost',sans-serif;font-weight:700;font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">03 · This is interesting.</p>
+      <p style="font-size:16.5px;color:var(--dark);opacity:0.85;line-height:1.85;margin-bottom:18px;">It's not just a place to pitch an idea once. MEAT Circles help you find people building in a similar direction. MEAT Next tells you what to do when you're not sure. MEAT Moments remembers every step along the way. And if you're a chef, From the Ground Floor lets people pre-order a seat at what you're opening before it even exists.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;">
+        <span style="padding:8px 16px;border:1px solid var(--border-color);font-size:12.5px;color:var(--dark);border-radius:20px;">MEAT Circles</span>
+        <span style="padding:8px 16px;border:1px solid var(--border-color);font-size:12.5px;color:var(--dark);border-radius:20px;">MEAT Next</span>
+        <span style="padding:8px 16px;border:1px solid var(--border-color);font-size:12.5px;color:var(--dark);border-radius:20px;">MEAT Moments</span>
+        <span style="padding:8px 16px;border:1px solid var(--border-color);font-size:12.5px;color:var(--dark);border-radius:20px;">From the Ground Floor</span>
+      </div>
+    </div>
+
+    <div style="text-align:center;padding-top:8px;">
+      <p style="font-family:'Jost',sans-serif;font-weight:700;font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;">04 · I want in.</p>
+      <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:clamp(18px,2.4vw,22px);color:var(--dark);margin-bottom:24px;">You don't need a pitch deck, or even a fully formed idea. You just need the willingness to take a first step.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <button class="btn btn-gold" onclick="openModal('firstStep')">Take the First Step →</button>
+        <button class="btn" style="background:transparent;color:var(--dark);border:1px solid var(--dark);" onclick="document.getElementById('who-its-for').scrollIntoView({behavior:'smooth'})">See Who It's For</button>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="section beige">
@@ -331,8 +453,15 @@
 
     <p style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--cream);margin:32px 0 12px;">MEAT Grows As You Grow</p>
     <p class="section-desc" style="max-width:640px;">Most apps recommend the same thing forever. MEAT keeps asking where you are, and where you'd like to be — then updates as the answers change. MEAT doesn't define creators by who they were when they signed up. It evolves with who they're becoming.</p>
+  </div>
+</div>
 
-    <p style="font-size:13.5px;color:var(--cream);opacity:0.75;line-height:1.85;margin:20px 0;max-width:640px;">There for the milestones, and everything in between.</p>
+<div class="section" id="platform">
+  <div class="container">
+    <p class="section-eyebrow">Inside the App</p>
+    <h2 class="section-title">Meet the app.</h2>
+    <p class="section-desc" style="max-width:640px;">There for the milestones, and everything in between.</p>
+    <p class="section-desc" style="max-width:640px;">This isn't a separate product from the idea you're testing — it's the infrastructure underneath it. Every reminder, every circle, every milestone below is tracking the same thing: your progress as a builder, not just a to-do list.</p>
 
     <p style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--cream);margin:32px 0 12px;">If Building Gets Off Track</p>
     <p class="section-desc" style="max-width:640px;">Yesterday's step doesn't just disappear. Keep it today, move it, break it smaller, mark it complete, or drop it. If you keep moving the same thing, MEAT can ask: "You've moved this three times. Want me to make it easier?" Accountability without shaming.</p>
@@ -549,6 +678,7 @@
     <p style="font-size:12px;color:var(--cream);opacity:0.75;font-style:italic;margin-top:16px;text-align:center;">Mockup shown for illustration — the actual app is still being built.</p>
 
     <p style="font-size:13px;color:var(--cream);opacity:0.75;text-align:center;max-width:560px;margin:24px auto 0;line-height:1.85;">A meatie is a great accountability partner for a lot of things. For substance use, mental health, or recovery, MEAT always points toward real, trained support first — not a stranger from an app. See our full Trust &amp; Safety commitments on <a href="https://meathospitalitygroup.com#trust-safety" style="color:var(--cream);">meathospitalitygroup.com →</a></p>
+    <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:14px;color:var(--cream);opacity:0.85;text-align:center;margin-top:16px;">Connection should never require surrendering your boundaries.</p>
 
     <p style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(18px,2.6vw,22px);color:var(--cream);line-height:1.6;text-align:center;max-width:600px;margin:40px auto 0;">One app for everything. Events. Partner redemptions across the city. Yesterday's goals and today's. We're not five apps pretending to be one — we're the one that was actually supposed to exist.</p>
     <p style="font-size:13px;color:var(--cream);opacity:0.75;text-align:center;margin-top:16px;">When we grow, you grow. When you grow, we grow.</p>
@@ -597,7 +727,7 @@
       <p style="font-size:14px;color:var(--cream);opacity:1;line-height:1.85;margin-top:14px;">It can suggest the next step toward a goal, a follow-up from something you completed, an activity that fits your interests, a person or Circle to connect with, a MEATUp or experience, something you've been putting off, or a new direction when you're not sure what to do next. The fourth home in the app, right alongside Today, MEATspace, and MEAT Rewards.</p>
       <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:15px;color:var(--cream);text-align:center;margin-top:16px;">You handled today. Now let's figure out what's next.</p>
       <p style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--cream);margin-top:24px;text-align:center;">The Full Daily Loop</p>
-      <p style="font-size:13.5px;color:var(--cream);opacity:0.75;line-height:1.9;text-align:center;margin-top:8px;">MEATings gets you started → First Steps move the day → rollover keeps you accountable → Meaties and Circles inspire and connect → MEAT Next answers "what's next?"</p>
+      <p style="font-size:13.5px;color:var(--cream);opacity:0.75;line-height:1.9;text-align:center;margin-top:8px;">MEATings gets you started → First Steps move the day → rollover keeps you accountable → Meaties and Circles inspire and connect → MEAT Next answers "what's next?" → MEAT Moments captures it</p>
     </div>
 
     <div id="meat-count" style="max-width:600px;margin:32px auto 0;padding:32px 28px;border:1px solid var(--border-color);text-align:left;">
@@ -608,6 +738,31 @@
       <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:15px;color:var(--cream);text-align:center;margin-top:16px;">Every step counts. Every payment counts. Every action counts. Because progress should lead somewhere. That somewhere is MEAT.</p>
       <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:16px;color:var(--cream);text-align:center;margin-top:20px;">Making Ends MEAT</p>
       <p style="font-size:13px;color:var(--cream);opacity:0.65;text-align:center;line-height:1.8;">MEAT Count counts the steps. Making Ends MEAT shows where the financial ones are taking you.</p>
+    </div>
+
+    <div id="meat-moments" style="max-width:600px;margin:32px auto 0;padding:32px 28px;border:1px solid var(--border-color);text-align:left;">
+      <p style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--cream);margin-bottom:10px;text-align:center;">Inside the App</p>
+      <p style="font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(20px,2.8vw,24px);color:var(--cream);margin-bottom:16px;text-align:center;">MEAT <em style="font-style:italic;color:var(--cream);">Moments.</em></p>
+      <p style="font-size:13.5px;font-weight:600;color:var(--cream);line-height:1.7;margin-bottom:16px;text-align:center;">Capture the moments that count.</p>
+      <p style="font-size:14px;color:var(--cream);opacity:0.85;line-height:1.85;text-align:center;margin-bottom:16px;">From the everyday wins to the once-in-a-lifetime milestones, keep the people, places, and experiences that make your life yours.</p>
+      <p style="font-size:14px;color:var(--cream);opacity:1;line-height:1.85;">Your first trip out of the country. Graduating. Moving in with your best friend. Starting a business. Meeting someone who changes your life. Getting engaged. Getting married. Becoming a parent. Running your first marathon. And everything exciting in between the milestones, too — even the smaller nights you never want to forget.</p>
+      <p style="font-size:14px;color:var(--cream);opacity:1;line-height:1.85;margin-top:14px;">Over time, those Moments become a visual timeline of your actions, your people, your experiences, and your growth.</p>
+      <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:14.5px;color:var(--cream);text-align:center;margin-top:18px;line-height:1.8;">Do something → Capture the Moment → Share/connect → Track your growth → Discover what's Next → Do something again.</p>
+      <p style="font-size:13px;color:var(--cream);opacity:0.85;text-align:center;margin-top:14px;">It's a story that goes beyond finding events: discover → participate → support → experience → remember. That includes the moment someone can eventually say, <em>"I supported this before the doors opened."</em></p>
+      <div style="margin-top:20px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.15);text-align:center;">
+        <p style="font-size:13px;color:var(--cream);opacity:0.85;font-style:italic;"><strong style="font-style:normal;">MEAT Next:</strong> What will you do next?</p>
+        <p style="font-size:13px;color:var(--cream);opacity:0.85;font-style:italic;margin-top:4px;"><strong style="font-style:normal;">MEAT Moments:</strong> Remember what got you here.</p>
+      </div>
+    </div>
+
+    <div id="ground-floor" style="max-width:600px;margin:32px auto 0;padding:32px 28px;border:1px solid var(--border-color);text-align:left;">
+      <p style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--cream);margin-bottom:10px;text-align:center;">Inside the App</p>
+      <p style="font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(20px,2.8vw,24px);color:var(--cream);margin-bottom:16px;text-align:center;">From the <em style="font-style:italic;color:var(--cream);">Ground Floor.</em></p>
+      <p style="font-size:14px;color:var(--cream);opacity:1;line-height:1.85;">People discover chefs and what they hope to open next — the vision, menu direction, proposed neighborhood, and what makes it different — then pre-order a future experience to help generate early support.</p>
+      <p style="font-size:14px;color:var(--cream);opacity:1;line-height:1.85;margin-top:14px;">This is not an investment, and it does not carry ownership or equity in the restaurant. It's a pre-order for a future experience, with clear terms on fulfillment, refunds, timing, and what happens if the concept doesn't open.</p>
+      <p style="font-size:13.5px;color:var(--cream);opacity:0.85;line-height:1.8;margin-top:14px;"><strong>For the guest:</strong> Discover what could exist before everyone else does.<br><strong>For the chef:</strong> Find the people who want it, and let their pre-orders help you get there.</p>
+      <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:13.5px;color:var(--cream);text-align:center;margin-top:18px;line-height:1.8;">Chef Profile → Concept → Community Interest → Pre-Orders → Funding Toward Launch → Opening → MEAT Experience → MEAT Moment</p>
+      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;color:var(--cream);text-align:center;margin-top:16px;">"I supported this before the doors opened."</p>
     </div>
 
     <div id="companion" style="max-width:600px;margin:32px auto 0;padding:32px 28px;border:1px solid var(--border-color);text-align:left;">
@@ -656,7 +811,7 @@
   </div>
 </div>
 
-<div class="section">
+<div class="section" id="story">
   <div class="container">
     <p class="section-eyebrow">THE FIRST STORY</p>
     <h2 class="section-title">One creator who was afraid, and built anyway</h2>
@@ -674,7 +829,7 @@
   </div>
 </div>
 
-<div class="section beige" style="text-align:center;">
+<div class="section beige" id="your-move" style="text-align:center;">
   <div class="container">
     <p class="section-eyebrow">YOUR MOVE</p>
     <h2 class="section-title">Build With MEAT,<br>or <em style="font-style:italic;color:var(--gold);">build your own concept.</em></h2>
@@ -706,7 +861,8 @@
       <a href="https://storemhg.com" target="_blank" rel="noopener" style="color:var(--cream);text-decoration:none;font-size:14px;font-weight:500;">MEAT Hospitality Group Store →</a>
     </div>
     <p style="font-size:13px;opacity:.7;line-height:1.7;max-width:520px;margin:22px auto 0;">MEAT Empire is the build layer. MEATverse connects you to everything MEAT can become. MEAT Hospitality Group is proof it works.</p>
-    <p style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--cream);opacity:.8;line-height:2;margin-top:24px;">Quality with purpose.<br>Priced for real life.<br>Built for people who keep going.</p>
+    <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:14px;color:var(--cream);opacity:.85;margin-top:20px;">MEAT — life organization as easy as MEATing. 💚</p>
+    <p style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--cream);opacity:.8;line-height:2;margin-top:20px;">Quality with purpose.<br>Priced for real life.<br>Built for people who keep going.</p>
   </div>
   <p style="margin-top:40px; font-size:12px; opacity:0.6;">Built by creators, for creators.</p>
 </footer>
@@ -717,10 +873,11 @@
       <h2 class="modal-title">Take the First Step</h2>
       <button class="modal-close" onclick="closeModal('firstStep')">×</button>
     </div>
-    <p style="font-size:13px; color:var(--muted); margin-bottom:24px; line-height:1.7;">Tell us about your idea.</p>
+    <p style="font-size:13px; color:var(--muted); margin-bottom:24px; line-height:1.7;">Tell us what brought you here — an idea, a concept, or just curiosity. All of it counts as a first step.</p>
     <div class="form-group"><label>Your Name</label><input type="text" placeholder="What should we call you?" data-field="name"></div>
     <div class="form-group"><label>Your Email</label><input type="email" placeholder="How do we reach you?" data-field="email"></div>
-    <div class="form-group"><label>Your Idea</label><textarea placeholder="What do you want to create?" data-field="idea"></textarea></div>
+    <div class="form-group"><label>What Brings You Here</label><textarea placeholder="An idea, a project, what you'd want to build or use MEAT for — or just what caught your interest. Optional." data-field="idea"></textarea></div>
+    <p id="firstStep-error" style="display:none;font-size:12.5px;color:#B5433D;margin-bottom:12px;">Please fill in your name and email.</p>
     <div class="form-actions">
       <button class="btn" onclick="closeModal('firstStep')">Not Yet</button>
       <button class="btn btn-gold" onclick="submitForm('firstStep')">I'm In</button>
@@ -749,10 +906,11 @@
     </div>
     <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
       <button class="btn btn-gold" onclick="closeModal('citySelect')">NYC</button>
-      <button class="btn" onclick="closeModal('citySelect'); alert('LA coming soon')">Los Angeles</button>
-      <button class="btn" onclick="closeModal('citySelect'); alert('SF coming soon')">San Francisco</button>
-      <button class="btn" onclick="closeModal('citySelect'); alert('Chicago coming soon')">Chicago</button>
+      <button class="btn" onclick="showCitySoon('Los Angeles')">Los Angeles</button>
+      <button class="btn" onclick="showCitySoon('San Francisco')">San Francisco</button>
+      <button class="btn" onclick="showCitySoon('Chicago')">Chicago</button>
     </div>
+    <p id="citySoonMsg" style="display:none;font-size:13px;color:var(--gold);text-align:center;margin-top:16px;font-style:italic;"></p>
   </div>
 </div>
 
@@ -821,6 +979,10 @@ function openModal(id) {
   if (modal) {
     modal.classList.add('show');
   }
+  if (id === 'citySelect') {
+    const msg = document.getElementById('citySoonMsg');
+    if (msg) { msg.style.display = 'none'; msg.textContent = ''; }
+  }
 }
 
 function closeModal(id) {
@@ -830,6 +992,16 @@ function closeModal(id) {
   }
   const confirm = document.getElementById(id + '-confirm');
   if (confirm) confirm.classList.remove('show');
+  const err = document.getElementById(id + '-error');
+  if (err) err.style.display = 'none';
+}
+
+function showCitySoon(city) {
+  const msg = document.getElementById('citySoonMsg');
+  if (msg) {
+    msg.textContent = city + ' is coming soon — NYC is where we\'re starting.';
+    msg.style.display = 'block';
+  }
 }
 
 function submitForm(modalId) {
@@ -845,9 +1017,13 @@ function submitForm(modalId) {
   });
   
   if (!formData.name || !formData.email) {
-    alert('Please fill in name and email');
+    const err = document.getElementById(modalId + '-error');
+    if (err) { err.style.display = 'block'; }
     return;
   }
+
+  const err = document.getElementById(modalId + '-error');
+  if (err) { err.style.display = 'none'; }
   
   const confirm = document.getElementById(modalId + '-confirm');
   if (confirm) {
