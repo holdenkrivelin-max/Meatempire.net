@@ -40,7 +40,7 @@
       --beige: #EDE7D8;
       --muted: #6B7A66;
       --spacing-base: 40px;
-      --border-color: rgba(44,58,40,0.08);
+      --border-color:rgba(44,58,40,0.74);
     }
     body.dark-mode {
       --cream: #1a1a1a;
@@ -93,7 +93,7 @@
     .cta-short { display: none; }
     .cta-long { display: inline; }
     .mode-toggle { background: none; border: 1px solid var(--border-color); color: var(--dark); padding: 8px 12px; font-size: 14px; cursor: pointer; border-radius: 4px; font-family: 'Jost', sans-serif; font-weight: 600; transition: all 0.3s ease; }
-    body.dark-mode .mode-toggle { border-color: rgba(247,243,236,0.2); color: var(--cream); }
+    body.dark-mode .mode-toggle { border-color:rgba(247,243,236,0.62); color: var(--cream); }
     body.dark-mode #firstStep-error { color: #E08A85 !important; }
     .nav-btn { background: #6FA85A; border: none; color: #F7F3EC; padding: 10px 20px; font-family: 'Jost', sans-serif; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600; cursor: pointer; border-radius: 4px; }
     
@@ -231,7 +231,7 @@
       <div class="nav-drop-menu">
         <p class="nav-drop-subhead">Experiences</p>
         <button class="nav-drop-subitem" onclick="document.getElementById('ground-floor').scrollIntoView({behavior:'smooth'})">Chef Features</button>
-        <button class="nav-drop-subitem" onclick="document.getElementById('ground-floor').scrollIntoView({behavior:'smooth'})">From the Ground Floor</button>
+        <button class="nav-drop-subitem" onclick="document.getElementById('ground-floor').scrollIntoView({behavior:'smooth'})">MEAT at the Ground Floor</button>
         <div class="nav-drop-divider"></div>
         <button onclick="document.getElementById('meat-circles').scrollIntoView({behavior:'smooth'})">MEAT Circles</button>
         <button onclick="document.getElementById('meat-next').scrollIntoView({behavior:'smooth'})">MEAT Next</button>
@@ -274,7 +274,7 @@
 
     <p style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin:8px 0 4px;font-weight:600;">MEAT</p>
     <a href="javascript:void(0)" onclick="toggleMobileMenu(); document.getElementById('ground-floor').scrollIntoView({behavior:'smooth'})" style="font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--dark);text-decoration:none;padding:8px 0;">Chef Features</a>
-    <a href="javascript:void(0)" onclick="toggleMobileMenu(); document.getElementById('ground-floor').scrollIntoView({behavior:'smooth'})" style="font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--dark);text-decoration:none;padding:8px 0;">From the Ground Floor</a>
+    <a href="javascript:void(0)" onclick="toggleMobileMenu(); document.getElementById('ground-floor').scrollIntoView({behavior:'smooth'})" style="font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--dark);text-decoration:none;padding:8px 0;">MEAT at the Ground Floor</a>
     <a href="javascript:void(0)" onclick="toggleMobileMenu(); document.getElementById('meat-circles').scrollIntoView({behavior:'smooth'})" style="font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--dark);text-decoration:none;padding:8px 0;">MEAT Circles</a>
     <a href="javascript:void(0)" onclick="toggleMobileMenu(); document.getElementById('meat-next').scrollIntoView({behavior:'smooth'})" style="font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--dark);text-decoration:none;padding:8px 0;">MEAT Next</a>
     <a href="javascript:void(0)" onclick="toggleMobileMenu(); document.getElementById('meat-moments').scrollIntoView({behavior:'smooth'})" style="font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--dark);text-decoration:none;padding:8px 0;">MEAT Moments</a>
@@ -312,11 +312,16 @@
   <h1 class="hero-main">You have an idea.<br><em>That's enough.</em></h1>
   <p class="hero-body">You don't need permission. You don't need to be ready. You don't need years of experience. You need an idea and the willingness to take one step. MEAT Empire gives you everything else.</p>
 
-  <p style="font-family:'Jost',sans-serif;font-weight:600;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-top:24px;">MEAT — Make Every Action Count</p>
-  <p style="font-size:12px;letter-spacing:.08em;color:var(--muted);margin-top:6px;">Connect · Plan · Move · Fuel · Grow · Make Impact</p>
+  <p style="font-size:12px;letter-spacing:.08em;color:var(--muted);margin-top:24px;">Connect · Plan · Move · Fuel · Grow · Make Impact</p>
 
   <div style="max-width:520px;margin:20px auto 0;padding:20px 24px;border:1px solid var(--border-color);text-align:left;">
     <p style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;text-align:center;">Empire, in One Breath</p>
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:var(--dark);line-height:1.6;margin-bottom:8px;text-align:center;">MEAT is an action platform built to change the way people move, meet, plan, and execute.</p>
+    <p style="font-family:'Jost',sans-serif;font-weight:700;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);text-align:center;margin-bottom:12px;">Make Every Action Count.</p>
+    <p style="font-size:13px;color:var(--dark);text-align:center;line-height:1.7;margin-bottom:12px;">MEAT brings connection, opportunity, and action into one place — so people can meet the right people, work toward what matters, and complete what they started.</p>
+    <p style="font-size:12.5px;color:var(--gold);text-align:center;line-height:1.6;margin-bottom:10px;font-style:italic;">MEAT helps turn intention into movement.</p>
+    <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:14px;color:var(--dark);text-align:center;margin-bottom:10px;">Don't just scroll through life. Go live it.</p>
+    <p style="font-size:13px;color:var(--muted);text-align:center;line-height:1.7;margin-bottom:16px;">MEAT helps people discover what matters, connect with the right people, go do something, and complete what they started.</p>
     <p style="font-size:14px;color:var(--muted);line-height:1.85;">Bring a half-formed idea. We help you shape a first step and test it with real people, low stakes. If it works, it grows into something real — with MEAT's infrastructure behind you, not alone.</p>
   </div>
 
@@ -340,12 +345,12 @@
 
     <div style="margin-bottom:36px;">
       <p style="font-family:'Jost',sans-serif;font-weight:700;font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">03 · This is interesting.</p>
-      <p style="font-size:16.5px;color:var(--dark);opacity:0.85;line-height:1.85;margin-bottom:18px;">It's not just a place to pitch an idea once. MEAT Circles help you find people building in a similar direction. MEAT Next tells you what to do when you're not sure. MEAT Moments remembers every step along the way. And if you're a chef, From the Ground Floor lets people pre-order a seat at what you're opening before it even exists.</p>
+      <p style="font-size:16.5px;color:var(--dark);opacity:0.85;line-height:1.85;margin-bottom:18px;">It's not just a place to pitch an idea once. MEAT Circles help you find people building in a similar direction. MEAT Next tells you what to do when you're not sure. MEAT Moments remembers every step along the way. And if you're a chef, MEAT at the Ground Floor lets people pre-order a seat at what you're opening before it even exists.</p>
       <div style="display:flex;flex-wrap:wrap;gap:8px;">
         <span style="padding:8px 16px;border:1px solid var(--border-color);font-size:12.5px;color:var(--dark);border-radius:20px;">MEAT Circles</span>
         <span style="padding:8px 16px;border:1px solid var(--border-color);font-size:12.5px;color:var(--dark);border-radius:20px;">MEAT Next</span>
         <span style="padding:8px 16px;border:1px solid var(--border-color);font-size:12.5px;color:var(--dark);border-radius:20px;">MEAT Moments</span>
-        <span style="padding:8px 16px;border:1px solid var(--border-color);font-size:12.5px;color:var(--dark);border-radius:20px;">From the Ground Floor</span>
+        <span style="padding:8px 16px;border:1px solid var(--border-color);font-size:12.5px;color:var(--dark);border-radius:20px;">MEAT at the Ground Floor</span>
       </div>
     </div>
 
@@ -481,11 +486,11 @@
         <div style="background:#F7F3EC;border-radius:26px;overflow:hidden;position:relative;height:490px;">
           <div style="position:absolute;top:8px;left:50%;transform:translateX(-50%);width:70px;height:18px;background:#0d0d0d;border-radius:10px;z-index:2;"></div>
           <div style="padding:56px 22px 22px;text-align:left;">
-            <p style="font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:rgba(44,58,40,0.4);margin-bottom:16px;">Welcome Back</p>
+            <p style="font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:rgba(44,58,40,0.8);margin-bottom:16px;">Welcome Back</p>
             <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;color:#2C3A28;line-height:1.4;margin-bottom:6px;">Hey Jared.</p>
             <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;color:#2C3A28;line-height:1.4;margin-bottom:22px;">What have you been up to?</p>
             <div style="background:white;border:1px solid rgba(44,58,40,0.15);border-radius:8px;padding:14px;height:90px;margin-bottom:20px;">
-              <p style="font-size:10px;color:rgba(44,58,40,0.35);">Type here...</p>
+              <p style="font-size:10px;color:rgba(44,58,40,0.79);">Type here...</p>
             </div>
             <div style="background:#2C3A28;color:#F7F3EC;text-align:center;padding:13px;border-radius:8px;font-size:11px;letter-spacing:.15em;text-transform:uppercase;font-weight:600;">Continue</div>
           </div>
@@ -536,11 +541,11 @@
             <p style="font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--cream);margin-bottom:24px;">Bring Your Idea</p>
             <p style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:19px;color:#2C3A28;line-height:1.35;margin-bottom:24px;">What's your idea?</p>
             <div style="background:white;border:1px solid rgba(44,58,40,0.15);border-radius:8px;padding:12px 14px;margin-bottom:16px;">
-              <p style="font-size:10.5px;color:rgba(44,58,40,0.4);">Half-formed is fine...</p>
+              <p style="font-size:10.5px;color:rgba(44,58,40,0.8);">Half-formed is fine...</p>
             </div>
             <p style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:19px;color:#2C3A28;line-height:1.35;margin-bottom:24px;margin-top:32px;">What's the first step to test it?</p>
             <div style="background:white;border:1px solid rgba(44,58,40,0.15);border-radius:8px;padding:12px 14px;">
-              <p style="font-size:10.5px;color:rgba(44,58,40,0.4);">Type here...</p>
+              <p style="font-size:10.5px;color:rgba(44,58,40,0.8);">Type here...</p>
             </div>
             <div style="margin-top:40px;background:#2C3A28;color:#F7F3EC;text-align:center;padding:13px;border-radius:8px;font-size:11px;letter-spacing:.15em;text-transform:uppercase;font-weight:600;">Let's MEAT</div>
           </div>
@@ -553,12 +558,12 @@
           <div style="position:absolute;top:8px;left:50%;transform:translateX(-50%);width:70px;height:18px;background:#0d0d0d;border-radius:10px;z-index:2;"></div>
           <div style="padding:48px 20px 66px;text-align:left;">
             <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:#2C3A28;margin-bottom:4px;">Good morning, Alyssa.</p>
-            <p style="font-size:10px;color:rgba(44,58,40,0.55);margin-bottom:4px;">Here are your MEATs for today.</p>
-            <p style="font-size:10px;color:rgba(44,58,40,0.55);margin-bottom:20px;">Still want to complete those, or something else on your mind?</p>
+            <p style="font-size:10px;color:rgba(44,58,40,0.83);margin-bottom:4px;">Here are your MEATs for today.</p>
+            <p style="font-size:10px;color:rgba(44,58,40,0.83);margin-bottom:20px;">Still want to complete those, or something else on your mind?</p>
             <div style="background:#EDE7D8;border:1px solid rgba(122,146,112,0.4);border-radius:8px;padding:12px 14px;margin-bottom:10px;display:flex;align-items:center;gap:10px;">
               <div style="width:16px;height:16px;background:#2C3A28;border-radius:4px;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#F7F3EC;font-size:10px;">✓</div>
               <div style="flex:1;">
-                <p style="font-size:10.5px;color:rgba(44,58,40,0.5);text-decoration:line-through;margin-bottom:2px;">Send that email to schedule the work meeting for Monday</p>
+                <p style="font-size:10.5px;color:rgba(44,58,40,0.82);text-decoration:line-through;margin-bottom:2px;">Send that email to schedule the work meeting for Monday</p>
                 <p style="font-size:9px;color:var(--cream);font-weight:700;">+10 points earned</p>
               </div>
             </div>
@@ -572,10 +577,10 @@
             </div>
           </div>
           <div style="position:absolute;bottom:0;left:0;right:0;background:white;border-top:1px solid rgba(44,58,40,0.1);display:flex;padding:10px 0 14px;">
-            <div style="flex:1;text-align:center;"><p style="font-size:8px;color:rgba(44,58,40,0.4);">MEATspace</p></div>
+            <div style="flex:1;text-align:center;"><p style="font-size:8px;color:rgba(44,58,40,0.8);">MEATspace</p></div>
             <div style="flex:1;text-align:center;"><p style="font-size:8px;font-weight:700;color:#2C3A28;">Today</p></div>
-            <div style="flex:1;text-align:center;"><p style="font-size:8px;color:rgba(44,58,40,0.4);">Rewards</p></div>
-            <div style="flex:1;text-align:center;"><p style="font-size:8px;color:rgba(44,58,40,0.4);">MEAT Next</p></div>
+            <div style="flex:1;text-align:center;"><p style="font-size:8px;color:rgba(44,58,40,0.8);">Rewards</p></div>
+            <div style="flex:1;text-align:center;"><p style="font-size:8px;color:rgba(44,58,40,0.8);">MEAT Next</p></div>
           </div>
         </div>
         <p style="color:rgba(247,243,236,0.75);font-size:11px;margin-top:16px;text-align:center;">Today's MEATs</p>
@@ -586,25 +591,25 @@
           <div style="position:absolute;top:8px;left:50%;transform:translateX(-50%);width:70px;height:18px;background:#0d0d0d;border-radius:10px;z-index:2;"></div>
           <div style="padding:48px 20px 66px;text-align:left;">
             <p style="font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--cream);margin-bottom:4px;">MEATspace</p>
-            <p style="font-size:10px;color:rgba(44,58,40,0.55);margin-bottom:18px;">Matched with you by interest, goals, and what you're building.</p>
+            <p style="font-size:10px;color:rgba(44,58,40,0.83);margin-bottom:18px;">Matched with you by interest, goals, and what you're building.</p>
             <div style="background:white;border:1px solid rgba(44,58,40,0.12);border-radius:8px;padding:12px 14px;margin-bottom:10px;">
               <p style="font-size:11px;color:#2C3A28;font-weight:600;margin-bottom:3px;">Jared</p>
-              <p style="font-size:9.5px;color:rgba(44,58,40,0.55);margin-bottom:8px;">Building a coffee subscription concept.</p>
+              <p style="font-size:9.5px;color:rgba(44,58,40,0.83);margin-bottom:8px;">Building a coffee subscription concept.</p>
               <div style="background:#2C3A28;color:#F7F3EC;text-align:center;padding:8px;border-radius:6px;font-size:9px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;">Let's MEAT</div>
             </div>
             <div style="background:#EDE7D8;border:1px solid rgba(122,146,112,0.4);border-radius:8px;padding:12px 14px;margin-bottom:14px;">
               <p style="font-size:7.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--cream);font-weight:700;margin-bottom:4px;">You and Sam Both Want This</p>
               <p style="font-size:11px;color:#2C3A28;font-weight:600;margin-bottom:3px;">Sam (friend)</p>
-              <p style="font-size:9.5px;color:rgba(44,58,40,0.55);margin-bottom:8px;">You're both testing a pop-up concept this weekend.</p>
+              <p style="font-size:9.5px;color:rgba(44,58,40,0.83);margin-bottom:8px;">You're both testing a pop-up concept this weekend.</p>
               <div style="background:#2C3A28;color:#F7F3EC;text-align:center;padding:8px;border-radius:6px;font-size:9px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;">Let's MEAT</div>
             </div>
-            <p style="font-size:8.5px;color:rgba(44,58,40,0.4);font-style:italic;line-height:1.6;">Jared sees your MEAT file and interests too — he decides if he'd like to confirm the meetup.</p>
+            <p style="font-size:8.5px;color:rgba(44,58,40,0.8);font-style:italic;line-height:1.6;">Jared sees your MEAT file and interests too — he decides if he'd like to confirm the meetup.</p>
           </div>
           <div style="position:absolute;bottom:0;left:0;right:0;background:white;border-top:1px solid rgba(44,58,40,0.1);display:flex;padding:10px 0 14px;">
             <div style="flex:1;text-align:center;"><p style="font-size:8px;font-weight:700;color:#2C3A28;">MEATspace</p></div>
-            <div style="flex:1;text-align:center;"><p style="font-size:8px;color:rgba(44,58,40,0.4);">Today</p></div>
-            <div style="flex:1;text-align:center;"><p style="font-size:8px;color:rgba(44,58,40,0.4);">Rewards</p></div>
-            <div style="flex:1;text-align:center;"><p style="font-size:8px;color:rgba(44,58,40,0.4);">MEAT Next</p></div>
+            <div style="flex:1;text-align:center;"><p style="font-size:8px;color:rgba(44,58,40,0.8);">Today</p></div>
+            <div style="flex:1;text-align:center;"><p style="font-size:8px;color:rgba(44,58,40,0.8);">Rewards</p></div>
+            <div style="flex:1;text-align:center;"><p style="font-size:8px;color:rgba(44,58,40,0.8);">MEAT Next</p></div>
           </div>
         </div>
         <p style="color:rgba(247,243,236,0.75);font-size:11px;margin-top:16px;text-align:center;">See What Creators Are Up To</p>
@@ -622,21 +627,21 @@
                 </div>
                 <p style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:17px;color:#2C3A28;">Alyssa</p>
               </div>
-              <p style="font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:rgba(44,58,40,0.4);margin-bottom:10px;">Building</p>
+              <p style="font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:rgba(44,58,40,0.8);margin-bottom:10px;">Building</p>
               <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;">
                 <span style="padding:5px 10px;border:1px solid rgba(44,58,40,0.2);border-radius:14px;font-size:9px;color:#2C3A28;">Hospitality</span>
                 <span style="padding:5px 10px;border:1px solid rgba(44,58,40,0.2);border-radius:14px;font-size:9px;color:#2C3A28;">First-Time Founder</span>
               </div>
-              <p style="font-size:9.5px;color:rgba(44,58,40,0.55);">Sent you a Let's MEAT — she's working on her business plan today too.</p>
+              <p style="font-size:9.5px;color:rgba(44,58,40,0.83);">Sent you a Let's MEAT — she's working on her business plan today too.</p>
             </div>
             <div style="background:#2C3A28;color:#F7F3EC;text-align:center;padding:13px;border-radius:8px;font-size:11px;letter-spacing:.15em;text-transform:uppercase;font-weight:600;margin-bottom:10px;">MEATUp</div>
-            <div style="background:transparent;color:rgba(44,58,40,0.5);text-align:center;padding:13px;border-radius:8px;font-size:11px;letter-spacing:.15em;text-transform:uppercase;font-weight:600;border:1px solid rgba(44,58,40,0.15);">MEATUp Later</div>
+            <div style="background:transparent;color:rgba(44,58,40,0.82);text-align:center;padding:13px;border-radius:8px;font-size:11px;letter-spacing:.15em;text-transform:uppercase;font-weight:600;border:1px solid rgba(44,58,40,0.15);">MEATUp Later</div>
           </div>
           <div style="position:absolute;bottom:0;left:0;right:0;background:white;border-top:1px solid rgba(44,58,40,0.1);display:flex;padding:10px 0 14px;">
             <div style="flex:1;text-align:center;"><p style="font-size:8px;font-weight:700;color:#2C3A28;">MEATspace</p></div>
-            <div style="flex:1;text-align:center;"><p style="font-size:8px;color:rgba(44,58,40,0.4);">Today</p></div>
-            <div style="flex:1;text-align:center;"><p style="font-size:8px;color:rgba(44,58,40,0.4);">Rewards</p></div>
-            <div style="flex:1;text-align:center;"><p style="font-size:8px;color:rgba(44,58,40,0.4);">MEAT Next</p></div>
+            <div style="flex:1;text-align:center;"><p style="font-size:8px;color:rgba(44,58,40,0.8);">Today</p></div>
+            <div style="flex:1;text-align:center;"><p style="font-size:8px;color:rgba(44,58,40,0.8);">Rewards</p></div>
+            <div style="flex:1;text-align:center;"><p style="font-size:8px;color:rgba(44,58,40,0.8);">MEAT Next</p></div>
           </div>
         </div>
         <p style="color:rgba(247,243,236,0.75);font-size:11px;margin-top:16px;text-align:center;">Jared Decides — MEATUp</p>
@@ -647,26 +652,26 @@
           <div style="position:absolute;top:8px;left:50%;transform:translateX(-50%);width:70px;height:18px;background:#0d0d0d;border-radius:10px;z-index:2;"></div>
           <div style="padding:44px 18px 18px;text-align:left;overflow-y:auto;height:388px;" class="e-rewards-accordion">
             <p style="font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--cream);margin-bottom:6px;">MEAT Rewards</p>
-            <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:26px;color:#2C3A28;margin-bottom:12px;">10 <span style="font-size:12px;font-weight:400;color:rgba(44,58,40,0.5);">points</span></p>
+            <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:26px;color:#2C3A28;margin-bottom:12px;">10 <span style="font-size:12px;font-weight:400;color:rgba(44,58,40,0.82);">points</span></p>
             <details open style="margin-bottom:6px;">
               <summary style="font-size:9.5px;font-weight:700;color:#2C3A28;background:#EDE7D8;border-radius:6px;padding:8px 10px;cursor:pointer;">Right Now · 0–20 pts</summary>
-              <div style="padding:8px 10px;"><p style="font-size:9px;color:rgba(44,58,40,0.65);">A coffee, or a protein bar to fuel the next work session — first points redeemable same day.</p></div>
+              <div style="padding:8px 10px;"><p style="font-size:9px;color:rgba(44,58,40,0.84);">A coffee, or a protein bar to fuel the next work session — first points redeemable same day.</p></div>
             </details>
             <details style="margin-bottom:6px;">
               <summary style="font-size:9.5px;font-weight:700;color:#2C3A28;background:#EDE7D8;border-radius:6px;padding:8px 10px;cursor:pointer;">This Month · 150–400 pts 🔒</summary>
-              <div style="padding:8px 10px;"><p style="font-size:9px;color:rgba(44,58,40,0.65);">Studio time, a co-working credit.</p></div>
+              <div style="padding:8px 10px;"><p style="font-size:9px;color:rgba(44,58,40,0.84);">Studio time, a co-working credit.</p></div>
             </details>
             <details>
               <summary style="font-size:9.5px;font-weight:700;color:#2C3A28;background:#EDE7D8;border-radius:6px;padding:8px 10px;cursor:pointer;">A Year Strong · 1000+ pts 🔒</summary>
-              <div style="padding:8px 10px;"><p style="font-size:9px;color:rgba(44,58,40,0.65);">A real consultation, a chance to present your idea.</p></div>
+              <div style="padding:8px 10px;"><p style="font-size:9px;color:rgba(44,58,40,0.84);">A real consultation, a chance to present your idea.</p></div>
             </details>
-            <p style="font-size:8.5px;color:rgba(44,58,40,0.4);font-style:italic;margin-top:10px;">The more you build, the more it opens up.</p>
+            <p style="font-size:8.5px;color:rgba(44,58,40,0.8);font-style:italic;margin-top:10px;">The more you build, the more it opens up.</p>
           </div>
           <div style="position:absolute;bottom:0;left:0;right:0;background:white;border-top:1px solid rgba(44,58,40,0.1);display:flex;padding:10px 0 14px;">
-            <div style="flex:1;text-align:center;"><p style="font-size:8px;color:rgba(44,58,40,0.4);">MEATspace</p></div>
-            <div style="flex:1;text-align:center;"><p style="font-size:8px;color:rgba(44,58,40,0.4);">Today</p></div>
+            <div style="flex:1;text-align:center;"><p style="font-size:8px;color:rgba(44,58,40,0.8);">MEATspace</p></div>
+            <div style="flex:1;text-align:center;"><p style="font-size:8px;color:rgba(44,58,40,0.8);">Today</p></div>
             <div style="flex:1;text-align:center;"><p style="font-size:8px;font-weight:700;color:#2C3A28;">Rewards</p></div>
-            <div style="flex:1;text-align:center;"><p style="font-size:8px;color:rgba(44,58,40,0.4);">MEAT Next</p></div>
+            <div style="flex:1;text-align:center;"><p style="font-size:8px;color:rgba(44,58,40,0.8);">MEAT Next</p></div>
           </div>
         </div>
         <p style="color:rgba(247,243,236,0.75);font-size:11px;margin-top:16px;text-align:center;">MEAT Rewards — Grows With You</p>
@@ -757,7 +762,7 @@
 
     <div id="ground-floor" style="max-width:600px;margin:32px auto 0;padding:32px 28px;border:1px solid var(--border-color);text-align:left;">
       <p style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--cream);margin-bottom:10px;text-align:center;">Inside the App</p>
-      <p style="font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(20px,2.8vw,24px);color:var(--cream);margin-bottom:16px;text-align:center;">From the <em style="font-style:italic;color:var(--cream);">Ground Floor.</em></p>
+      <p style="font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(20px,2.8vw,24px);color:var(--cream);margin-bottom:16px;text-align:center;">MEAT at the <em style="font-style:italic;color:var(--cream);">Ground Floor.</em></p>
       <p style="font-size:14px;color:var(--cream);opacity:1;line-height:1.85;">People discover chefs and what they hope to open next — the vision, menu direction, proposed neighborhood, and what makes it different — then pre-order a future experience to help generate early support.</p>
       <p style="font-size:14px;color:var(--cream);opacity:1;line-height:1.85;margin-top:14px;">This is not an investment, and it does not carry ownership or equity in the restaurant. It's a pre-order for a future experience, with clear terms on fulfillment, refunds, timing, and what happens if the concept doesn't open.</p>
       <p style="font-size:13.5px;color:var(--cream);opacity:0.85;line-height:1.8;margin-top:14px;"><strong>For the guest:</strong> Discover what could exist before everyone else does.<br><strong>For the chef:</strong> Find the people who want it, and let their pre-orders help you get there.</p>
@@ -796,6 +801,48 @@
       </div>
       <p style="font-size:14px;color:var(--cream);opacity:1;line-height:1.85;margin-top:14px;">See a trend, recommend it, a friend accepts, it becomes a First Step or a MEATUp, they complete it — MEAT Count moves. Trends feed directly into action, not passive scrolling.</p>
       <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:16px;color:var(--cream);text-align:center;margin-top:18px;">Trends should inspire participation, not comparison.</p>
+    </div>
+
+    <div id="full-ecosystem" style="max-width:640px;margin:32px auto 0;padding:32px 28px;border:1px solid var(--border-color);text-align:left;">
+      <p style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--cream);margin-bottom:10px;text-align:center;">The Complete System</p>
+      <p style="font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(20px,2.8vw,24px);color:var(--cream);margin-bottom:16px;text-align:center;">22 ways to <em style="font-style:italic;color:var(--cream);">MEAT</em></p>
+      <p style="font-size:13px;color:var(--cream);opacity:0.75;text-align:center;margin-bottom:20px;">Control what you share. See what matters. Discover what's next.</p>
+      <p style="font-size:13px;color:var(--cream);opacity:0.75;line-height:2.1;">
+        <strong style="color:var(--cream);opacity:1;">MEAT Home</strong> — your personal space ·
+        <strong style="color:var(--cream);opacity:1;">MEAT Love</strong> — what you care about ·
+        <strong style="color:var(--cream);opacity:1;">MEAT Life</strong> — what you want to accomplish ·
+        <strong style="color:var(--cream);opacity:1;">MEAT Feed</strong> — what matters right now ·
+        <strong style="color:var(--cream);opacity:1;">MEAT Inn</strong> — the news you care about ·
+        <strong style="color:var(--cream);opacity:1;">MEAT Next</strong> — what you discover next ·
+        <strong style="color:var(--cream);opacity:1;">MEAT Go</strong> — what you go do ·
+        <strong style="color:var(--cream);opacity:1;">MEAT Complete</strong> — what you follow through on ·
+        <strong style="color:var(--cream);opacity:1;">MEAT Me Halfway</strong> — what your people are doing ·
+        <strong style="color:var(--cream);opacity:1;">MEAT Your Friends</strong> — your trusted inner layer ·
+        <strong style="color:var(--cream);opacity:1;">MEAT Circles</strong> — your groups ·
+        <strong style="color:var(--cream);opacity:1;">MEAT Intros</strong> — who MEAT thinks you should meet ·
+        <strong style="color:var(--cream);opacity:1;">MEAT Share</strong> — who your people think you should meet ·
+        <strong style="color:var(--cream);opacity:1;">MEAT Match</strong> — who you may connect with romantically ·
+        <strong style="color:var(--cream);opacity:1;">MEAT Network</strong> — who and what can move your career forward ·
+        <strong style="color:var(--cream);opacity:1;">MEAT Clips</strong> — what you send your people ·
+        <strong style="color:var(--cream);opacity:1;">MEAT Games</strong> — how you break the ice ·
+        <strong style="color:var(--cream);opacity:1;">MEAT Profiles</strong> — who you are, on your terms ·
+        <strong style="color:var(--cream);opacity:1;">MEAT Languages</strong> — how MEAT communicates with you ·
+        <strong style="color:var(--cream);opacity:1;">MEAT Your Way</strong> — how you control the experience ·
+        <strong style="color:var(--cream);opacity:1;">MEAT at the Ground Floor</strong> — what you help bring to life ·
+        <strong style="color:var(--cream);opacity:1;">MEAT Expand</strong> — how you help shape what comes next ·
+        <strong style="color:var(--cream);opacity:1;">MEAT Approved</strong> — a designation for what meets the MEAT standard ·
+        <strong style="color:var(--cream);opacity:1;">MEAT List</strong> — the places and things you personally stand behind
+      </p>
+      <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:15px;color:var(--cream);text-align:center;margin-top:20px;">Start with what you love. Learn from what you do. Grow with who you become.</p>
+    </div>
+
+    <div id="meat-expand" style="max-width:600px;margin:32px auto 0;padding:32px 28px;border:1px solid var(--border-color);text-align:left;">
+      <p style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--cream);margin-bottom:10px;text-align:center;">Inside the App</p>
+      <p style="font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(20px,2.8vw,24px);color:var(--cream);margin-bottom:16px;text-align:center;">MEAT <em style="font-style:italic;color:var(--cream);">Expand.</em></p>
+      <p style="font-size:13.5px;font-weight:600;color:var(--cream);line-height:1.7;margin-bottom:16px;text-align:center;">Your voice helps shape what MEAT becomes next.</p>
+      <p style="font-size:14px;color:var(--cream);opacity:1;line-height:1.85;">Most companies ask their best users for feedback, then it disappears into a black box. MEAT Expand makes that relationship transparent — you don't just send an idea, you can watch where it goes: <strong>Submitted → Reviewed → Explored → Planned → Added.</strong></p>
+      <p style="font-size:14px;color:var(--cream);opacity:1;line-height:1.85;margin-top:14px;">Because MEAT already knows what you're into, your feedback is sorted automatically — a running suggestion routes to Fitness &amp; MEAT Life, a dating idea to MEAT Match, a career request to MEAT Network — landing with the team actually building that part of MEAT.</p>
+      <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:16px;color:var(--cream);text-align:center;margin-top:18px;">Submit your next MEAT expansion.</p>
     </div>
 
     <p style="text-align:center;font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--cream);margin:56px 0 12px;">Building in Health &amp; Wellness?</p>
@@ -864,6 +911,21 @@
     <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:14px;color:var(--cream);opacity:.85;margin-top:20px;">MEAT — life organization as easy as MEATing. 💚</p>
     <p style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--cream);opacity:.8;line-height:2;margin-top:20px;">Quality with purpose.<br>Priced for real life.<br>Built for people who keep going.</p>
   </div>
+  <p style="margin-top:32px;font-size:13px;">
+    <a href="mailto:holdenkrivelin@meatapp.tech" style="color:var(--cream);opacity:.7;">holdenkrivelin@meatapp.tech</a>
+    &nbsp;·&nbsp;
+    <a href="tel:6462341182" style="color:var(--cream);opacity:.7;">(646) 234-1182</a>
+  </p>
+  <p style="margin-top:14px;font-size:13px;">
+    <a href="https://instagram.com/meathospitalitygroup" target="_blank" rel="noopener" style="color:var(--cream);opacity:.7;text-decoration:underline;">Instagram</a>
+    &nbsp;·&nbsp;
+    <a href="https://open.spotify.com/show/7n7DseikNZ9vinU5Oszyit" target="_blank" rel="noopener" style="color:var(--cream);opacity:.7;text-decoration:underline;">Podcast</a>
+  </p>
+  <p style="margin-top:14px;font-size:11px;letter-spacing:.05em;">
+    <a href="https://meathospitalitygroup.com#privacy-policy" target="_blank" rel="noopener" style="color:var(--cream);opacity:.55;text-decoration:underline;">Privacy Policy</a>
+    &nbsp;·&nbsp;
+    <a href="https://meathospitalitygroup.com#terms" target="_blank" rel="noopener" style="color:var(--cream);opacity:.55;text-decoration:underline;">Terms of Service</a>
+  </p>
   <p style="margin-top:40px; font-size:12px; opacity:0.6;">Built by creators, for creators.</p>
 </footer>
 
