@@ -87,7 +87,7 @@
     .nav-main-menu-btn{margin-top:6px;margin-bottom:26px;font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:#F7F3EC;background:none;border:1px solid rgba(247,243,236,0.3);padding:12px 28px;border-radius:24px;cursor:pointer;display:flex;align-items:center;gap:8px;font-family:'Jost',sans-serif;font-weight:500;transition:border-color .2s,color .2s;min-height:44px;}
     .nav-main-menu-btn:hover{border-color:#E8C66B;color:#E8C66B;}
     .nav-main-menu-btn:after{content:'';width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-top:6px solid #E8C66B;display:inline-block;margin-left:2px;}
-    body{padding-top:150px;}
+    body{padding-top:280px;}
     .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 400; letter-spacing: 0.02em; color: var(--cream); text-decoration: none; }
     body.dark-mode .nav-logo { color: var(--cream); }
     .nav-logo strong { color: #E8C66B; }
@@ -266,6 +266,7 @@
 </head>
 <body>
 
+<input id="empireMenuToggle" type="checkbox" aria-hidden="true" tabindex="-1" style="position:fixed;opacity:0;pointer-events:none;"/>
 <nav>
   <a class="nav-corner-brand" href="https://meatempire.net/" aria-label="MEAT Empire home">
     <img src="meat-logo-gold.png" alt=""/>
@@ -279,13 +280,13 @@
   <div class="nav-center">
     <img class="nav-center-m" src="meat-logo-gold.png" alt="MEAT Empire"/>
     <p class="nav-center-name">MEAT <strong>Empire</strong></p>
-    <button class="nav-main-menu-btn" aria-label="Open menu" onclick="toggleMobileMenu()">Menu</button>
+    <label class="nav-main-menu-btn" for="empireMenuToggle" role="button" tabindex="0" aria-label="Open menu">Menu</label>
     <button class="nav-btn" style="margin-top:0;" onclick="openModal('firstStep')">Take the First Step ↓</button>
   </div>
 </nav>
 
 <div id="mobileMenuPanel" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:#2C3A28;z-index:999;padding:100px 32px 40px;overflow-y:auto;">
-  <button onclick="toggleMobileMenu()" aria-label="Close menu" style="position:absolute;top:24px;right:24px;background:transparent;border:1px solid var(--border-color);background:#2C3A28;color:#F7F3EC;width:38px;height:38px;border-radius:50%;font-size:18px;cursor:pointer;">×</button>
+  <label for="empireMenuToggle" role="button" tabindex="0" aria-label="Close menu" style="position:absolute;top:24px;right:24px;background:transparent;border:1px solid var(--border-color);background:#2C3A28;color:#F7F3EC;width:38px;height:38px;border-radius:50%;font-size:18px;cursor:pointer;text-align:center;line-height:36px;">×</label>
   <div style="display:flex;flex-direction:column;gap:6px;text-align:left;max-width:360px;margin:0 auto;">
     <button onclick="toggleMobileMenu(); document.getElementById('start-here').scrollIntoView({behavior:'smooth'})" style="background:none;border:1px solid #E8C66B;border-radius:16px;padding:8px 16px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#E8C66B;font-family:'Jost',sans-serif;font-weight:500;margin-bottom:20px;align-self:flex-start;">New Here? Start Here →</button>
 
@@ -299,6 +300,10 @@
     <p style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#E8C66B;margin:20px 0 4px;font-weight:600;">Build With MEAT</p>
     <a href="javascript:void(0)" onclick="toggleMobileMenu(); document.getElementById('your-move').scrollIntoView({behavior:'smooth'})" style="font-family:'Cormorant Garamond',serif;font-size:21px;background:#2C3A28;color:#F7F3EC;text-decoration:none;padding:8px 0;">Your Move</a>
 
+    <p style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#E8C66B;margin:20px 0 4px;font-weight:600;">The MEAT World</p>
+    <a href="https://meathospitalitygroup.com" style="font-family:'Cormorant Garamond',serif;font-size:21px;background:#2C3A28;color:#F7F3EC;text-decoration:none;padding:8px 0;">MEAT Hospitality Group</a>
+    <a href="https://meatverse.co" style="font-family:'Cormorant Garamond',serif;font-size:21px;background:#2C3A28;color:#F7F3EC;text-decoration:none;padding:8px 0;">MEATVerse</a>
+
     <p style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#E8C66B;margin:20px 0 4px;font-weight:600;">Shop</p>
     <a href="https://storemhg.com" target="_blank" rel="noopener" style="font-family:'Cormorant Garamond',serif;font-size:21px;background:#2C3A28;color:#F7F3EC;text-decoration:none;padding:8px 0;">Store</a>
 
@@ -306,6 +311,7 @@
   </div>
 </div>
 <style>
+  #empireMenuToggle:checked ~ #mobileMenuPanel{display:block !important;}
   body.dark-mode #mobileMenuPanel{background:#1a1a1a !important;}
   body.dark-mode #mobileMenuPanel a{color:#f0f0f0 !important;}
   body.menu-open{overflow:hidden;}
@@ -334,7 +340,7 @@
     <p style="font-size:12.5px;color:#E8C66B;text-align:center;line-height:1.6;margin-bottom:10px;font-style:italic;">MEAT helps turn intention into movement.</p>
     <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:14px;color:var(--cream);text-align:center;margin-bottom:10px;">Don't just scroll through life. Go live it.</p>
     <p style="font-size:13px;color:var(--muted);text-align:center;line-height:1.7;margin-bottom:16px;">MEAT helps people discover what matters, connect with the right people, go do something, and complete what they started.</p>
-    <p style="font-size:14px;color:var(--muted);line-height:1.85;">Bring a half-formed idea. We help you shape a first step and test it with real people, low stakes. If it works, it grows into something real — with MEAT's infrastructure behind you, not alone.</p>
+    <p style="font-size:14px;color:var(--muted);line-height:1.85;">MEAT Empire is not another general AI chat. It is the build layer for creators: bring an idea, shape the first step, test it with real people, and build from there. Your idea stays yours while MEAT connects it to direction, practical tools, community, and a real path to launch.</p>
   </div>
 
   <button class="hero-cta" onclick="openModal('firstStep')">Take the First Step →</button>
@@ -736,12 +742,15 @@ function initializeDarkMode() {
 
 function toggleMobileMenu() {
   const panel = document.getElementById('mobileMenuPanel');
-  const isOpen = panel.style.display === 'flex' || panel.style.display === 'block';
+  const toggle = document.getElementById('empireMenuToggle');
+  const isOpen = toggle.checked || panel.style.display === 'flex' || panel.style.display === 'block';
   if (isOpen) {
     panel.style.display = 'none';
+    toggle.checked = false;
     document.body.classList.remove('menu-open');
   } else {
     panel.style.display = 'block';
+    toggle.checked = true;
     document.body.classList.add('menu-open');
   }
 }
