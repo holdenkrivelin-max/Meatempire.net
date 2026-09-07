@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MEAT Empire — You Have an Idea. That's Enough.</title>
+  <meta name="description" content="MEAT Empire is the build layer for people with ideas — helping turn a half-formed idea into a first testable step."/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://meatempire.net/"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="MEAT Empire"/>
+  <meta property="og:title" content="MEAT Empire — You Have an Idea. That's Enough."/>
+  <meta property="og:description" content="MEAT Empire is the build layer for people with ideas — helping turn a half-formed idea into a first testable step."/>
+  <meta property="og:url" content="https://meatempire.net/"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="MEAT Empire — You Have an Idea. That's Enough."/>
+  <meta name="twitter:description" content="You have an idea. That's enough. MEAT Empire is the build layer for people with ideas."/>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%232C3A28'/%3E%3Ccircle cx='50' cy='50' r='46' fill='none' stroke='%237A9270' stroke-width='2'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='52' fill='%237A9270' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E"/>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "MEAT Empire",
+    "url": "https://meatempire.net/",
+    "description": "The build layer for people with ideas — helping turn a half-formed idea into a first testable step.",
+    "parentOrganization": {
+      "@type": "Organization",
+      "name": "MEAT Hospitality Group",
+      "url": "https://meathospitalitygroup.com/"
+    }
+  }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --cream: #F7F3EC;
+      --gold: #7A5F0F;
+      --dark: #2C3A28;
+      --beige: #2C3A28;
+      --muted: #6B7A66;
+      --spacing-base: 40px;
+      --border-color:rgba(44,58,40,0.74);
+    }
+    body.dark-mode {
+      --cream: #f0f0f0;
+      --gold: #6B4F0A;
+      --dark: #1a1a1a;
+      --beige: #2a2a2a;
+      --muted: #b0b0b0;
+      --border-color: rgba(255,255,255,0.1);
+    }
+    html { scroll-behavior: smooth; }
+    body.large-text { font-size: 112.5%; }
+    body { background: #2C3A28; color: #F7F3EC; font-family: 'Jost', sans-serif; font-weight: 300; line-height: 1.8; overflow-x: hidden; padding-bottom: 40px; transition: background-color 0.3s ease, color 0.3s ease; }
+    body.dark-mode { background: #1a1a1a; color: #f0f0f0; }
+    body.light-mode {
+      --cream: #2C3A28;
+      --gold: #7A5F0F;
+      --dark: #F7F3EC;
+      --beige: #F7F3EC;
+      --muted: #6B7A66;
+      --border-color: rgba(44,58,40,0.74);
+      background: #F7F3EC;
+      color: #2C3A28;
+    }
+    /* Catch hardcoded (non-variable) colors that don't respond to the variable swap above.
+       Excludes phone-mockup badges, which intentionally stay light-text-on-dark-badge
+       regardless of page theme. */
+    body.light-mode [style*="color:#F7F3EC"]:not([style*="background:#2C3A28"]):not([style*="background: #2C3A28"]) { color:#2C3A28 !important; }
+    body.light-mode [style*="color: #F7F3EC"]:not([style*="background:#2C3A28"]):not([style*="background: #2C3A28"]) { color:#2C3A28 !important; }
+    body.light-mode [style*="rgba(247,243,236"] { color:rgba(44,58,40,0.85) !important; }
+    body.light-mode [style*="color:#E8C66B"] { color:#7A5F0F !important; }
+    body.light-mode [style*="color: #E8C66B"] { color:#7A5F0F !important; }
+    body.light-mode .hero-main { color:#2C3A28 !important; }
+    body.dark-mode .hero-main { color:#f0f0f0 !important; }
+    
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; padding: 12px 20px 14px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; background: rgba(44,58,40,0.98); border-bottom: 1px solid var(--border-color); }
+    body.dark-mode nav { background: rgba(44,58,40,0.98); }
+    .nav-corner-brand{position:absolute;top:12px;left:18px;opacity:.85;}
+    .nav-corner-brand img{height:24px;width:24px;object-fit:contain;}
+    .nav-utils{position:absolute;top:10px;right:14px;display:flex;align-items:center;gap:8px;}
+    .nav-center{display:flex;flex-direction:column;align-items:center;gap:4px;}
+    .nav-center-m{height:32px;width:32px;object-fit:contain;margin-bottom:3px;}
+    .nav-center-name{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:400;letter-spacing:.02em;color:#F7F3EC;text-align:center;margin:0 0 16px 0;line-height:1.15;padding-bottom:12px;border-bottom:3px solid rgba(247,243,236,0.6);display:inline-block;}
+    .nav-center-name strong{color:#E8C66B;font-weight:400;}
+    .nav-main-menu-btn{margin-top:6px;margin-bottom:26px;font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:#F7F3EC;background:none;border:1px solid rgba(247,243,236,0.3);padding:12px 28px;border-radius:24px;cursor:pointer;display:flex;align-items:center;gap:8px;font-family:'Jost',sans-serif;font-weight:500;transition:border-color .2s,color .2s;min-height:44px;}
+    .nav-main-menu-btn:hover{border-color:#E8C66B;color:#E8C66B;}
+    .nav-main-menu-btn:after{content:'';width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-top:6px solid #E8C66B;display:inline-block;margin-left:2px;}
+    body{padding-top:280px;}
+    .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 400; letter-spacing: 0.02em; color: var(--cream); text-decoration: none; }
+    body.dark-mode .nav-logo { color: var(--cream); }
+    .nav-logo strong { color: #E8C66B; }
+    .nav-controls { display: flex; gap: 16px; align-items: center; }
+    @media(min-width:900px){ .nav-controls{ gap: 40px; } }
+    .nav-drop{position:relative;display:inline-block;}
+    .nav-drop>summary{
+      list-style:none;cursor:pointer;font-size:13px;color:var(--cream);font-weight:500;
+      font-family:'Jost',sans-serif;display:flex;align-items:center;gap:4px;
+    }
+    .nav-drop>summary::-webkit-details-marker{display:none;}
+    .nav-drop>summary:after{content:'▾';font-size:9px;color:#E8C66B;}
+    .nav-drop:hover>summary,.nav-drop[open]>summary{color:#E8C66B;}
+    .nav-drop-menu{
+      position:absolute;top:100%;left:50%;transform:translateX(-50%);
+      background:var(--cream);border:1px solid var(--border-color);
+      box-shadow:0 16px 40px rgba(0,0,0,0.18);padding:14px 0;margin-top:14px;
+      min-width:200px;z-index:200;
+    }
+    .nav-drop-menu button{
+      display:block;width:100%;text-align:left;padding:10px 20px;white-space:nowrap;
+      font-size:12px;letter-spacing:.08em;color:var(--muted);background:none;border:none;cursor:pointer;
+      font-family:'Jost',sans-serif;transition:color .15s,background .15s;
+    }
+    .nav-drop-menu button:hover{color:#E8C66B;background:rgba(232,198,107,0.08);}
+    .nav-drop-subhead{
+      padding:8px 20px 4px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+      color:var(--dark);opacity:0.7;font-family:'Jost',sans-serif;font-weight:600;
+    }
+    .nav-drop-menu .nav-drop-subitem{padding-left:30px !important;}
+    .nav-drop-divider{height:1px;background:var(--border-color);margin:8px 14px;}
+    body.dark-mode .nav-drop-menu{background:#1a1a1a;}
+    .nav-drop{display:none;}
+    @media(min-width:900px){.nav-drop{display:inline-block;}}
+    .cta-short { display: none; }
+    .cta-long { display: inline; }
+    .mode-toggle { background: none; border: 1px solid rgba(247,243,236,0.3); color: #F7F3EC; padding: 8px 12px; font-size: 14px; cursor: pointer; border-radius: 4px; font-family: 'Jost', sans-serif; font-weight: 600; transition: all 0.3s ease; }
+    body.dark-mode .mode-toggle { border-color:rgba(247,243,236,0.62); color: var(--cream); }
+    body.dark-mode #firstStep-error { color: #E08A85 !important; }
+    .nav-btn { background: #2C3A28; border: 1px solid rgba(232,198,107,0.4); color: #F7F3EC; padding: 12px 28px; font-family: 'Jost', sans-serif; font-size: 14px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600; cursor: pointer; border-radius: 6px; transition: border-color .2s, background .2s; min-height: 44px; }
+    .nav-btn:hover { background: #E8C66B; color: #2C3A28; border-color: #E8C66B; }
+    
+    .city-selector { font-size: 12px; color: #F7F3EC; border: 1px solid rgba(247,243,236,0.3); padding: 6px 12px; border-radius: 4px; background: transparent; cursor: pointer; }
+    body.dark-mode .city-selector { background: transparent; color: var(--cream); }
+    
+    .hero { margin-top: 0; padding: 40px var(--spacing-base) 100px; text-align: center; max-width: 900px; margin-left: auto; margin-right: auto; }
+    .hero-eyebrow { font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: #E8C66B; margin-bottom: 20px; font-weight: 600; }
+    body.light-mode .hero-eyebrow { color: #7A5F0F; }
+    .hero-main { font-family: 'Cormorant Garamond', serif; font-size: clamp(44px, 9vw, 80px); font-weight: 300; letter-spacing: 0.02em; margin-bottom: 16px; line-height: 1.1; color: var(--cream); }
+    .hero-main em { font-style: italic; color: #E8C66B; }
+    body.light-mode .hero-main em { color: #7A5F0F; }
+    .hero-body { font-size: 16px; color: var(--muted); max-width: 700px; margin: 0 auto 40px; line-height: 1.85; }
+    .btn { display: inline-block; padding: 13px 32px; background: none; border: 1px solid var(--dark); color: var(--dark); font-family: 'Jost', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; cursor: pointer; border-radius: 4px; }
+    .btn-gold { background: #456B35; border: none; color: #F7F3EC; }
+    .hero-cta { padding: 14px 40px; background: #456B35; border: none; color: #F7F3EC; font-family: 'Jost', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; cursor: pointer; border-radius: 4px; }
+    
+    .section { padding: 100px var(--spacing-base); border-top: 1px solid var(--border-color); }
+    .section.dark { background: var(--dark); color: var(--cream); border-top: none; }
+    .section.dark .section-eyebrow { color: var(--cream); }
+    .section.beige { background: var(--beige); }
+    .container { max-width: 1000px; margin: 0 auto; }
+    
+    .section-eyebrow { font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: #E8C66B; margin-bottom: 20px; font-weight: 600; }
+    body.light-mode .section-eyebrow { color: #7A5F0F; }
+    .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(36px, 6vw, 60px); font-weight: 300; margin-bottom: 28px; line-height: 1.2; letter-spacing: 0.02em; }
+    .section.dark .section-title { color: var(--cream); }
+    .section-desc { font-size: 15px; color: var(--muted); margin-bottom: 32px; line-height: 1.85; max-width: 700px; }
+    .section.dark .section-desc { color: var(--cream); opacity: 0.8; }
+    
+    .proof-grid { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 24px; margin: 60px 0; }
+    .proof-box { text-align: center; padding: 28px; background: white; color: var(--dark); border-radius: 6px; border: 1px solid var(--border-color); cursor: pointer; transition: all 0.3s ease; }
+    body.dark-mode .proof-box { background: #2a2a2a; }
+    .proof-number { font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 300; color: #E8C66B; margin-bottom: 8px; }
+    body.light-mode .proof-number { color: #7A5F0F; }
+    .proof-label { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); font-weight: 600; margin-bottom: 4px; }
+    .proof-desc { font-size: 12px; color: var(--muted); }
+    
+    .stories-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; margin: 60px 0; }
+    .story-card { background: white; color: var(--dark); padding: 32px; border-radius: 6px; border: 1px solid var(--border-color); cursor: pointer; transition: all 0.3s ease; }
+    body.dark-mode .story-card { background: #2a2a2a; color: #f0f0f0; }
+    body.light-mode .story-card { color: #2C3A28; }
+    .story-avatar { width: 64px; height: 64px; background: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #F7F3EC; font-weight: 600; font-size: 24px; margin-bottom: 16px; }
+    .story-name { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 400; margin-bottom: 4px; }
+    .story-title { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #7A5F0F; font-weight: 600; margin-bottom: 16px; }
+    body.dark-mode .story-title { color: #E8C66B; }
+    .story-before { font-size: 12px; color: var(--muted); margin-bottom: 12px; line-height: 1.6; padding-bottom: 12px; border-bottom: 1px solid var(--border-color); }
+    .story-after { font-size: 12px; color: var(--dark); line-height: 1.6; font-weight: 500; }
+    
+    .process-grid { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 20px; margin: 60px 0; }
+    .process-step { background: white; color: var(--dark); padding: 28px; border-radius: 6px; border: 1px solid var(--border-color); text-align: center; position: relative; cursor: pointer; transition: all 0.3s ease; }
+    body.dark-mode .process-step { background: #2a2a2a; color: #f0f0f0; }
+    body.light-mode .process-step { color: #2C3A28; }
+    .process-step::after { content: '→'; position: absolute; right: -32px; top: 50%; transform: translateY(-50%); font-size: 24px; color: #E8C66B; font-weight: 300; }
+    .process-step:last-child::after { display: none; }
+    .process-day { font-family: 'Cormorant Garamond', serif; font-size: 20px; color: #7A5F0F; font-weight: 400; margin-bottom: 8px; }
+    body.dark-mode .process-day { color: #E8C66B; }
+    .process-title { font-size: 14px; font-weight: 600; margin-bottom: 8px; }
+    .process-desc { font-size: 12px; color: var(--muted); line-height: 1.6; }
+    
+    .marketplace-grid { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 16px; margin: 60px 0; }
+    .collab-card { background: white; color: var(--dark); padding: 20px; border-radius: 6px; border: 1px solid var(--border-color); cursor: pointer; transition: all 0.3s ease; }
+    body.dark-mode .collab-card { background: #2a2a2a; color: #f0f0f0; }
+    body.light-mode .collab-card { color: #2C3A28; }
+    .collab-avatar { width: 48px; height: 48px; background: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #F7F3EC; font-weight: 600; margin-bottom: 12px; }
+    .collab-name { font-weight: 600; font-size: 13px; margin-bottom: 2px; }
+    .collab-role { font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #7A5F0F; font-weight: 600; margin-bottom: 8px; }
+    body.dark-mode .collab-role { color: #E8C66B; }
+    .collab-desc { font-size: 11px; color: var(--muted); line-height: 1.5; }
+    
+    .activity-feed { margin: 60px 0; max-width: 600px; margin-left: auto; margin-right: auto; }
+    .activity-item { background: white; color: var(--dark); padding: 20px; border-radius: 6px; border: 1px solid var(--border-color); margin-bottom: 12px; display: flex; gap: 16px; cursor: pointer; transition: all 0.3s ease; }
+    body.dark-mode .activity-item { background: #2a2a2a; }
+    .activity-dot { width: 12px; height: 12px; background: var(--gold); border-radius: 50%; flex-shrink: 0; margin-top: 4px; }
+    .activity-text { font-size: 13px; color: var(--dark); line-height: 1.6; }
+    .activity-time { font-size: 11px; color: var(--muted); }
+    
+    .event-snapshot { background: white; color: var(--dark); padding: 40px; border-radius: 6px; border: 1px solid var(--border-color); margin: 60px 0; cursor: pointer; transition: all 0.3s ease; }
+    body.dark-mode .event-snapshot { background: #2a2a2a; color: #f0f0f0; }
+    .snapshot-title { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 400; margin-bottom: 24px; }
+    .snapshot-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+    .snapshot-section h4 { font-weight: 600; font-size: 13px; margin-bottom: 12px; }
+    .snapshot-section p { font-size: 12px; color: var(--muted); line-height: 1.7; margin-bottom: 8px; }
+    
+    .cta-final { text-align: center; padding: 80px var(--spacing-base); background: linear-gradient(135deg, var(--beige) 0%, var(--cream) 100%); border-radius: 8px; margin: 60px 0; }
+    .cta-final h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(32px, 5vw, 52px); font-weight: 300; margin-bottom: 24px; letter-spacing: 0.02em; }
+    .cta-final p { font-size: 15px; color: var(--muted); margin-bottom: 32px; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.85; }
+    .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    
+    .modal { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.4); z-index: 300; align-items: center; justify-content: center; }
+    .modal.show { display: flex; }
+    .modal-content { background: var(--cream); color: var(--dark); width: 90%; max-width: 520px; padding: 40px; border-radius: 8px; max-height: 80vh; overflow-y: auto; }
+    .modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 28px; padding-bottom: 20px; border-bottom: 1px solid var(--border-color); }
+    .modal-title { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 300; }
+    .modal-close { background: none; border: none; font-size: 28px; cursor: pointer; color: var(--dark); opacity: 0.5; }
+    .form-group { margin-bottom: 20px; }
+    .form-group label { display: block; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: #E8C66B; font-weight: 600; margin-bottom: 8px; }
+    .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 12px 14px; border: 1px solid var(--border-color); border-radius: 4px; font-family: 'Jost', sans-serif; font-size: 13px; color: var(--dark); background: white; }
+    body.dark-mode .form-group input, body.dark-mode .form-group textarea, body.dark-mode .form-group select { background: #333; color: var(--dark); }
+    .form-group textarea { min-height: 120px; resize: vertical; }
+    .form-actions { display: flex; gap: 12px; margin-top: 28px; }
+    .form-actions .btn { flex: 1; padding: 13px 20px; }
+    .confirmation { background: rgba(232,198,107,0.1); border: 1px solid rgba(232,198,107,0.2); padding: 20px; border-radius: 6px; margin-top: 20px; text-align: center; color: #E8C66B; font-weight: 600; font-size: 13px; letter-spacing: 0.05em; display: none; }
+    body.light-mode .confirmation { color: #7A5F0F; }
+    .confirmation.show { display: block; }
+    
+    footer { background: var(--dark); color: var(--cream); padding: 80px var(--spacing-base) 120px; text-align: center; }
+    footer .section-title { color: var(--cream); }
+    footer p { font-size: 14px; opacity: 0.85; max-width: 700px; margin: 0 auto; line-height: 1.85; }
+    footer p strong { color: var(--cream); }
+    
+    @media(max-width: 768px) {
+      nav { padding: 10px 16px 12px; }
+      .nav-corner-brand{top:10px !important;left:12px !important;}
+      .nav-corner-brand img{height:18px !important;width:18px !important;}
+      .nav-utils{top:9px !important;right:10px !important;}
+      .nav-center-m{height:26px !important;width:26px !important;}
+      .nav-center-name{font-size:15px !important;}
+      .nav-main-menu-btn{font-size:13px !important;padding:11px 22px !important;min-height:44px !important;}
+      .mode-toggle { padding: 6px 8px; font-size: 11px; }
+      .mode-toggle .mode-label { display: none; }
+      #a11yToggle { width: 26px !important; height: 26px !important; font-size: 10px !important; }
+      .city-selector { padding: 5px 10px; font-size: 10px; white-space: nowrap; }
+      .nav-btn { padding: 11px 22px; font-size: 13px; letter-spacing: 0.14em; white-space: nowrap; min-height: 44px; }
+      .hero { padding: 32px 24px 50px; margin-top: 0; }
+      .section { padding: 60px 24px; }
+      :root { --spacing-base: 24px; }
+      .proof-grid { grid-template-columns: 1fr 1fr; }
+      .stories-grid { grid-template-columns: 1fr; }
+      .process-grid { grid-template-columns: 1fr 1fr; }
+      .process-step::after { display: none; }
+      .marketplace-grid { grid-template-columns: 1fr 1fr; }
+      .snapshot-grid { grid-template-columns: 1fr; }
+      .modal-content { padding: 28px; }
+    }
+  </style>
+</head>
+<body>
+
+<input id="empireMenuToggle" type="checkbox" aria-hidden="true" tabindex="-1" style="position:fixed;opacity:0;pointer-events:none;"/>
+<nav>
+  <a class="nav-corner-brand" href="https://meatempire.net/" aria-label="MEAT Empire home">
+    <img src="meat-logo-gold.png" alt=""/>
+  </a>
+  <div class="nav-utils">
+    <div class="city-selector" onclick="openModal('citySelect')" style="cursor:pointer;">📍 NYC ▼</div>
+    <button id="a11yToggle" onclick="toggleLargeText()" aria-label="Toggle larger text" title="Larger text" style="background:#2C3A28;border:1px solid #F7F3EC4D;color:#F7F3EC;width:28px;height:28px;border-radius:50%;font-family:'Jost',sans-serif;font-weight:600;font-size:11px;cursor:pointer;flex-shrink:0;">Aa</button>
+    <button class="mode-toggle" onclick="toggleDarkMode()" id="modeBtn" style="padding:6px 10px;font-size:11px;">🌙<span class="mode-label"> Dark</span></button>
+  </div>
+
+  <div class="nav-center">
+    <img class="nav-center-m" src="meat-logo-gold.png" alt="MEAT Empire"/>
+    <p class="nav-center-name">MEAT <strong>Empire</strong></p>
+    <label class="nav-main-menu-btn" for="empireMenuToggle" role="button" tabindex="0" aria-label="Open menu">Menu</label>
+    <button class="nav-btn" style="margin-top:0;" onclick="openModal('firstStep')">Take the First Step ↓</button>
+  </div>
+</nav>
+
+<div id="mobileMenuPanel" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:#2C3A28;z-index:999;padding:100px 32px 40px;overflow-y:auto;">
+  <label for="empireMenuToggle" role="button" tabindex="0" aria-label="Close menu" style="position:absolute;top:24px;right:24px;background:transparent;border:1px solid var(--border-color);background:#2C3A28;color:#F7F3EC;width:38px;height:38px;border-radius:50%;font-size:18px;cursor:pointer;text-align:center;line-height:36px;">×</label>
+  <div style="display:flex;flex-direction:column;gap:6px;text-align:left;max-width:360px;margin:0 auto;">
+    <button onclick="toggleMobileMenu(); document.getElementById('start-here').scrollIntoView({behavior:'smooth'})" style="background:none;border:1px solid #E8C66B;border-radius:16px;padding:8px 16px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#E8C66B;font-family:'Jost',sans-serif;font-weight:500;margin-bottom:20px;align-self:flex-start;">New Here? Start Here →</button>
+
+    <p style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#E8C66B;margin:20px 0 4px;font-weight:600;">About</p>
+    <a href="javascript:void(0)" onclick="toggleMobileMenu(); document.getElementById('how-it-works').scrollIntoView({behavior:'smooth'})" style="font-family:'Cormorant Garamond',serif;font-size:21px;background:#2C3A28;color:#F7F3EC;text-decoration:none;padding:8px 0;">The Process</a>
+    <a href="javascript:void(0)" onclick="toggleMobileMenu(); document.getElementById('who-its-for').scrollIntoView({behavior:'smooth'})" style="font-family:'Cormorant Garamond',serif;font-size:21px;background:#2C3A28;color:#F7F3EC;text-decoration:none;padding:8px 0;">Who It's For</a>
+    <a href="javascript:void(0)" onclick="toggleMobileMenu(); document.getElementById('story').scrollIntoView({behavior:'smooth'})" style="font-family:'Cormorant Garamond',serif;font-size:21px;background:#2C3A28;color:#F7F3EC;text-decoration:none;padding:8px 0;">The First Story</a>
+    <a href="javascript:void(0)" onclick="toggleMobileMenu(); document.getElementById('meat-manifesto').scrollIntoView({behavior:'smooth'})" style="font-family:'Cormorant Garamond',serif;font-size:21px;background:#2C3A28;color:#F7F3EC;text-decoration:none;padding:8px 0;">The MEAT Manifesto</a>
+    <a href="javascript:void(0)" onclick="toggleMobileMenu(); document.getElementById('brand-philosophy').scrollIntoView({behavior:'smooth'})" style="font-family:'Cormorant Garamond',serif;font-size:21px;background:#2C3A28;color:#F7F3EC;text-decoration:none;padding:8px 0;">Brand Philosophy</a>
+
+    <p style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#E8C66B;margin:20px 0 4px;font-weight:600;">Build With MEAT</p>
+    <a href="javascript:void(0)" onclick="toggleMobileMenu(); document.getElementById('your-move').scrollIntoView({behavior:'smooth'})" style="font-family:'Cormorant Garamond',serif;font-size:21px;background:#2C3A28;color:#F7F3EC;text-decoration:none;padding:8px 0;">Your Move</a>
+
+    <p style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#E8C66B;margin:20px 0 4px;font-weight:600;">The MEAT World</p>
+    <a href="https://meathospitalitygroup.com" style="font-family:'Cormorant Garamond',serif;font-size:21px;background:#2C3A28;color:#F7F3EC;text-decoration:none;padding:8px 0;">MEAT Hospitality Group</a>
+    <a href="https://meatverse.co" style="font-family:'Cormorant Garamond',serif;font-size:21px;background:#2C3A28;color:#F7F3EC;text-decoration:none;padding:8px 0;">MEATVerse</a>
+
+    <p style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#E8C66B;margin:20px 0 4px;font-weight:600;">Shop</p>
+    <a href="https://storemhg.com" target="_blank" rel="noopener" style="font-family:'Cormorant Garamond',serif;font-size:21px;background:#2C3A28;color:#F7F3EC;text-decoration:none;padding:8px 0;">Store</a>
+
+    <button class="btn btn-gold" style="margin-top:24px;" onclick="toggleMobileMenu(); openModal('firstStep')">Take the First Step →</button>
+  </div>
+</div>
+<style>
+  #empireMenuToggle:checked ~ #mobileMenuPanel{display:block !important;}
+  body.dark-mode #mobileMenuPanel{background:#1a1a1a !important;}
+  body.dark-mode #mobileMenuPanel a{color:#f0f0f0 !important;}
+  body.menu-open{overflow:hidden;}
+  @media(max-width:899px){#mobileMenuBtn{display:inline-block !important;}}
+</style>
+<style>
+  .nav-section-link{display:none;}
+  @media(min-width:900px){.nav-section-link{display:inline-block;}}
+  body.dark-mode .nav-section-link{color:var(--cream) !important;}
+</style>
+
+<div class="hero">
+  <h1 style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(52px,11vw,96px);letter-spacing:.18em;color:var(--cream);line-height:1;margin-bottom:6px;">MEAT</h1>
+  <p style="font-weight:200;font-size:clamp(22px,4.5vw,34px);letter-spacing:.35em;text-transform:uppercase;color:#E8C66B;margin-bottom:32px;">Empire</p>
+  <p class="hero-eyebrow">FOR EVERYONE</p>
+  <h1 class="hero-main" style="color:#F7F3EC;">You have an idea.<br><em>That's enough.</em></h1>
+  <p class="hero-body">You don't need permission. You don't need to be ready. You don't need years of experience. You need an idea and the willingness to take one step. MEAT Empire helps you turn that idea into action.</p>
+
+  <p style="font-size:12px;letter-spacing:.08em;color:var(--muted);margin-top:24px;">Connect · Plan · Move · Fuel · Grow · Make Impact</p>
+
+  <div style="max-width:520px;margin:20px auto 0;padding:20px 24px;border:1px solid var(--border-color);text-align:left;">
+    <p style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#E8C66B;margin-bottom:10px;text-align:center;">Empire, in One Breath</p>
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:var(--cream);line-height:1.6;margin-bottom:8px;text-align:center;">MEAT is an action platform built to change the way people move, meet, plan, and execute.</p>
+    <p style="font-family:'Jost',sans-serif;font-weight:700;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#E8C66B;text-align:center;margin-bottom:12px;">Make Every Action Count.</p>
+    <p style="font-size:13px;color:var(--cream);text-align:center;line-height:1.7;margin-bottom:12px;">MEAT brings connection, opportunity, and action into one place — so people can meet the right people, work toward what matters, and complete what they started.</p>
+    <p style="font-size:12.5px;color:#E8C66B;text-align:center;line-height:1.6;margin-bottom:10px;font-style:italic;">MEAT helps turn intention into movement.</p>
+    <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:14px;color:var(--cream);text-align:center;margin-bottom:10px;">Don't just scroll through life. Go live it.</p>
+    <p style="font-size:13px;color:var(--muted);text-align:center;line-height:1.7;margin-bottom:16px;">MEAT helps people discover what matters, connect with the right people, go do something, and complete what they started.</p>
+    <p style="font-size:14px;color:var(--muted);line-height:1.85;">MEAT Empire is not another general AI chat. It is the build layer for creators: bring an idea, shape the first step, test it with real people, and build from there. Your idea stays yours while MEAT connects it to direction, practical tools, community, and a real path to launch.</p>
+  </div>
+
+  <button class="hero-cta" onclick="openModal('firstStep')">Take the First Step →</button>
+</div>
+
+<!-- BEFORE THE WORLD RECOGNIZES IT -->
+<div id="before-the-world-recognizes-it" class="section beige">
+  <div class="container" style="max-width:560px;text-align:center;">
+    <p style="font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:#E8C66B;margin-bottom:32px;">Nice to MEAT You</p>
+
+    <p style="font-size:15px;color:rgba(247,243,236,0.85);line-height:2;margin-bottom:20px;">There's a moment before anyone else understands your idea. Maybe it only has a name. Maybe it's still something you carry privately, half-formed, not ready to say out loud.</p>
+
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:var(--cream);line-height:1.8;margin-bottom:20px;">MEAT Empire meets you there.</p>
+
+    <p style="font-size:15px;color:rgba(247,243,236,0.85);line-height:2;margin-bottom:20px;">At first, your idea may be a stranger — just a name with a curious meaning, unfamiliar even to you. But we stay with it as it becomes a first step, an action, a test, a refinement — and eventually, something real.</p>
+
+    <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:17px;color:#E8C66B;line-height:1.7;">You have an idea. That's enough.</p>
+  </div>
+</div>
+
+<div id="you-dont-need-permission" class="section" style="padding-top:70px;padding-bottom:70px;">
+  <div class="container" style="max-width:560px;text-align:center;">
+    <p style="font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:#E8C66B;margin-bottom:24px;">You Don't Need Permission to Begin</p>
+    <p style="font-size:15px;color:var(--cream);line-height:2;margin-bottom:20px;">You don't need a perfect plan.<br>You don't need years of experience.<br>You don't need everyone around you to understand the idea.</p>
+    <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:18px;color:var(--cream);line-height:1.7;margin-bottom:20px;">You need somewhere to start.</p>
+    <p style="font-size:14.5px;color:rgba(247,243,236,0.8);line-height:1.9;">MEAT Empire helps turn curiosity into a First Step — and a First Step into something you can actually test.</p>
+  </div>
+</div>
+
+<div class="section" id="start-here">
+  <div class="container" style="max-width:680px;">
+    <p class="section-eyebrow" style="text-align:center;">New Here?</p>
+    <h2 class="section-title" style="text-align:center;">Start <em style="font-style:italic;color:#E8C66B;">here.</em></h2>
+
+    <div style="margin-top:40px;margin-bottom:36px;">
+      <p style="font-family:'Jost',sans-serif;font-weight:700;font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:#E8C66B;margin-bottom:10px;">01 · What is this?</p>
+      <p style="font-size:16.5px;color:rgba(247,243,236,0.85);line-height:1.85;">MEAT Empire is where builders, operators, creators, and entrepreneurs bring an idea they want to build — and test it with real people before spending real money.</p>
+    </div>
+
+    <div style="margin-bottom:36px;">
+      <p style="font-family:'Jost',sans-serif;font-weight:700;font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:#E8C66B;margin-bottom:10px;">02 · Oh, I get it.</p>
+      <p style="font-size:16.5px;color:rgba(247,243,236,0.85);line-height:1.85;">Bring a half-formed idea. We help you shape it into one small, testable first step, and put it in front of real people for real feedback. If it resonates, it grows into something real — with MEAT's infrastructure behind you, not alone.</p>
+    </div>
+
+    <div style="margin-bottom:36px;">
+      <p style="font-family:'Jost',sans-serif;font-weight:700;font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:#E8C66B;margin-bottom:10px;">03 · This is interesting.</p>
+      <p style="font-size:16.5px;color:rgba(247,243,236,0.85);line-height:1.85;margin-bottom:18px;">It's not just a place to pitch an idea once. The MEAT App helps you track what's next and remember every step along the way. And MEAT will keep growing to help you find people building in a similar direction.</p>
+    </div>
+
+    <div style="text-align:center;padding-top:8px;">
+      <p style="font-family:'Jost',sans-serif;font-weight:700;font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:#E8C66B;margin-bottom:14px;">04 · I want in.</p>
+      <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:clamp(18px,2.4vw,22px);color:var(--cream);margin-bottom:24px;">You don't need a pitch deck, or even a fully formed idea. You just need the willingness to take a first step.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <button class="btn btn-gold" onclick="openModal('firstStep')">Take the First Step →</button>
+        <button class="btn" style="background:transparent;color:var(--cream);border:1px solid var(--dark);" onclick="document.getElementById('who-its-for').scrollIntoView({behavior:'smooth'})">See Who It's For</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section beige">
+  <div class="container">
+    <p class="section-eyebrow">EARLY STAGE</p>
+    <h2 class="section-title">This is just starting.</h2>
+    <p class="hero-body" style="margin-left:auto;margin-right:auto;">MEAT Empire doesn't have a roster of case studies yet — because it's brand new. What it has is a founder who built the first thing anyway, and an open door for whoever's next.</p>
+    <div style="text-align:center;margin-top:32px;">
+      <button class="btn btn-gold" onclick="openModal('firstStep')">Take the First Step →</button>
+    </div>
+  </div>
+</div>
+
+<div class="section" id="how-it-works">
+  <div class="container">
+    <p class="section-eyebrow">THE PROCESS</p>
+    <h2 class="section-title">How it works.</h2>
+    <p class="section-desc">No pitch deck required. Just an idea and a willingness to test it.</p>
+
+    <div class="process-grid" style="cursor:default;">
+      <div class="process-step" style="cursor:default;">
+        <div class="process-day">01</div>
+        <div class="process-title">Bring your idea</div>
+        <div class="process-desc">Half-formed is fine. You don't need a business plan — you need something you keep thinking about.</div>
+      </div>
+      <div class="process-step" style="cursor:default;">
+        <div class="process-day">02</div>
+        <div class="process-title">Shape the first step</div>
+        <div class="process-desc">We help you turn the idea into one small, testable move instead of a giant leap.</div>
+      </div>
+      <div class="process-step" style="cursor:default;">
+        <div class="process-day">03</div>
+        <div class="process-title">Test it with real people</div>
+        <div class="process-desc">Low stakes, real feedback — before you've committed money to something that might not work.</div>
+      </div>
+      <div class="process-step" style="cursor:default;">
+        <div class="process-day">04</div>
+        <div class="process-title">Build from there</div>
+        <div class="process-desc">If it resonates, it grows into something real inside the MEATVerse — connected, not alone.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section beige" id="who-its-for">
+  <div class="container">
+    <p class="section-eyebrow">BUILT FOR</p>
+    <h2 class="section-title">Who it's for.</h2>
+    <p class="section-desc">If you've got an idea and nowhere to bring it, this is for you.</p>
+
+    <div class="marketplace-grid" style="cursor:default;">
+      <div class="collab-card" style="cursor:default;">
+        <div class="collab-avatar">B</div>
+        <div class="collab-name">Builders</div>
+        <div class="collab-role">Test a concept</div>
+        <div class="collab-desc">Before you commit to something you can't easily walk back, test the idea on real people first.</div>
+      </div>
+      <div class="collab-card" style="cursor:default;">
+        <div class="collab-avatar">O</div>
+        <div class="collab-name">Operators</div>
+        <div class="collab-role">Find your room</div>
+        <div class="collab-desc">Access to a network built for launching things, not just running them.</div>
+      </div>
+      <div class="collab-card" style="cursor:default;">
+        <div class="collab-avatar">C</div>
+        <div class="collab-name">Creators</div>
+        <div class="collab-role">Shape what's next</div>
+        <div class="collab-desc">Be in the room before an idea becomes something everyone's talking about.</div>
+      </div>
+      <div class="collab-card" style="cursor:default;">
+        <div class="collab-avatar">E</div>
+        <div class="collab-name">Entrepreneurs</div>
+        <div class="collab-role">Build with us</div>
+        <div class="collab-desc">Whatever the idea, MEAT's infrastructure and community might be the right place to build it.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="section" id="story">
+  <div class="container">
+    <p class="section-eyebrow">THE FIRST STORY</p>
+    <h2 class="section-title">One creator who was afraid, and built anyway</h2>
+    
+    <div class="stories-grid">
+      <div class="story-card" onclick="openModal('learnHolden')">
+        <div class="story-avatar">H</div>
+        <div class="story-name">Holden</div>
+        <div class="story-title">Founder • MEAT Empire</div>
+        <div class="story-before"><strong>Before:</strong> "I have an idea for a marketplace where builders, operators, and creators can come and collab on the next big idea. I'm calling it MEAT."</div>
+        <div class="story-after"><strong>After:</strong> Built the platform. Kept going.</div>
+      </div>
+    </div>
+    <p style="text-align:center;font-size:14px;color:var(--muted);margin-top:24px;">This section grows as real creators build real things. Yours could be next.</p>
+  </div>
+</div>
+
+
+
+
+<div id="meat-manifesto" class="section beige">
+  <div class="container" style="max-width:680px;">
+    <p class="section-eyebrow" style="text-align:center;">The Manifesto</p>
+    <h2 class="section-title" style="text-align:center;">One <em style="font-style:italic;color:#E8C66B;">Vision.</em></h2>
+
+    <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:19px;color:var(--cream);line-height:1.6;margin-bottom:12px;text-align:center;">We believe the future belongs to people who bring others together.</p>
+    <p style="font-size:15px;color:rgba(247,243,236,0.75);line-height:1.7;margin-bottom:36px;text-align:center;">Around ideas. Around experiences. Around action.</p>
+
+    <p style="font-size:14px;color:rgba(247,243,236,0.75);line-height:1.8;margin-bottom:6px;text-align:center;">Underneath all of it is the same purpose:</p>
+    <p style="font-family:'Jost',sans-serif;font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#E8C66B;margin-bottom:28px;text-align:center;">Create community. Create direction. Create lasting impact.</p>
+
+    <p style="font-size:14px;color:rgba(247,243,236,0.75);line-height:1.8;text-align:center;">The vision is global. The way there is the same as it's always been — one idea, one product, one story, one person, one step at a time.</p>
+  </div>
+</div>
+
+<div id="brand-philosophy" style="background:#2C3A28;padding:100px 32px;text-align:center;">
+  <div style="max-width:680px;margin:0 auto;">
+    <p style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#E8C66B;margin-bottom:14px;">What We Stand For</p>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(28px,4.4vw,40px);color:var(--cream);margin-bottom:36px;">The MEAT <em style="font-style:italic;color:#E8C66B;">Philosophy.</em></h2>
+
+    <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:19px;color:var(--cream);margin-bottom:8px;">MEAT — for wherever life takes you.</p>
+    <p style="font-family:'Jost',sans-serif;font-weight:700;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#E8C66B;margin-bottom:6px;">Make Every Action Count.</p>
+    <p style="font-size:13px;color:rgba(247,243,236,0.7);margin-bottom:6px;">Simple. Human. Useful. Positive.</p>
+    <p style="font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:rgba(247,243,236,0.6);margin-bottom:24px;">The Mission</p>
+
+    <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:19px;color:#E8C66B;margin-bottom:6px;">Keep MEATing Forward.</p>
+    <p style="font-size:12.5px;color:rgba(247,243,236,0.6);margin-bottom:28px;">💚 The culture. How Meaties sign off with each other.</p>
+
+    <p style="font-size:14.5px;color:rgba(247,243,236,0.8);line-height:1.85;margin-bottom:8px;">One person. One step. One day at a time.</p>
+    <p style="font-size:14.5px;color:rgba(247,243,236,0.8);line-height:1.85;margin-bottom:8px;">MEAT gives people structure, connection, tools, and encouragement to keep moving forward in real life.</p>
+    <p style="font-size:14.5px;color:rgba(247,243,236,0.8);line-height:1.85;margin-bottom:8px;">MEAT helps people discover what matters, connect with the right people, go do something, and complete what they started.</p>
+    <p style="font-size:14.5px;color:rgba(247,243,236,0.8);line-height:1.85;margin-bottom:8px;">MEAT helps turn intention into movement.</p>
+    <p style="font-family:'Jost',sans-serif;font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#E8C66B;margin-bottom:24px;">Connect. Work. Complete.</p>
+
+    <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:18px;color:var(--cream);margin-bottom:24px;">Don't just scroll through life. Go live it.</p>
+
+    <p style="font-size:14.5px;color:rgba(247,243,236,0.8);line-height:1.85;margin-bottom:24px;">Start with what you love. Learn from what you do. Grow with who you become.</p>
+
+    <p style="font-size:14px;color:rgba(247,243,236,0.8);line-height:1.8;margin-bottom:6px;">Control what you share. See what matters. Discover what's next.</p>
+    <p style="font-size:13px;color:rgba(247,243,236,0.68);line-height:1.75;font-style:italic;margin-bottom:24px;">Relevant, not overwhelming. Social, not invasive. Personal, not controlling. Actionable, not passive.</p>
+
+    <p style="font-size:14.5px;color:rgba(247,243,236,0.8);line-height:1.85;margin-bottom:8px;">Every interaction should leave the user with something they didn't have before.</p>
+    <p style="font-size:14.5px;color:rgba(247,243,236,0.8);line-height:1.85;margin-bottom:24px;">Human side: create meaningful connection. Technology side: create meaningful opportunity.</p>
+
+    <p style="font-size:14.5px;color:rgba(247,243,236,0.8);line-height:1.85;margin-bottom:8px;">You don't need everything figured out. You need a first step.</p>
+    <p style="font-size:14.5px;color:rgba(247,243,236,0.8);line-height:1.85;margin-bottom:24px;">Starting is the hardest part. MEAT helps you make it real.</p>
+
+    <p style="font-size:14.5px;color:rgba(247,243,236,0.8);line-height:1.85;margin-bottom:8px;">Start. Build. Get visible. But never forget the end user — they're the reason any of it matters.</p>
+    <p style="font-size:14.5px;color:rgba(247,243,236,0.8);line-height:1.85;margin-bottom:8px;">Build around universal human needs, then let each person shape the experience their way.</p>
+    <p style="font-size:14.5px;color:rgba(247,243,236,0.8);line-height:1.85;margin-bottom:24px;">We have more in common than we think. MEAT is built around what connects us, while respecting what makes each person different.</p>
+
+    <p style="font-size:14.5px;color:rgba(247,243,236,0.8);line-height:1.85;margin-bottom:16px;">MEAT never has to stop moving just because one part is taking longer than expected.</p>
+    <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:15px;color:var(--cream);line-height:1.7;margin-bottom:36px;">Movement doesn't mean doing everything simultaneously. It means there is always a next meaningful action.</p>
+
+    <div style="max-width:560px;margin:0 auto;padding:28px 30px;background:rgba(247,243,236,0.06);border:1px solid rgba(247,243,236,0.15);">
+      <p style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#E8C66B;margin-bottom:14px;">The Legacy Statement</p>
+      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:var(--cream);line-height:1.85;">MEAT is bigger than one app, one category, or one person. It is being built as a companion for wherever life takes you — helping people know what matters, discover what's next, take action, and find direction.</p>
+    </div>
+  </div>
+</div>
+
+<!-- FIRST MEATIES MANIFESTO -->
+<div id="first-meaties-manifesto" class="section beige">
+  <div class="container" style="max-width:640px;">
+    <p style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#E8C66B;margin-bottom:20px;">For the First Meaties</p>
+    <p style="font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(24px,3.6vw,32px);color:var(--cream);line-height:1.5;margin-bottom:36px;">MEAT belongs in the hands of the first Meaties.</p>
+
+    <p style="font-size:16px;color:rgba(247,243,236,0.75);line-height:1.9;margin-bottom:28px;">We're surrounded by apps, companies, systems, and limitations telling us how to organize our lives.</p>
+
+    <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:clamp(19px,2.6vw,23px);color:#E8C66B;line-height:1.6;margin-bottom:36px;">MEAT is being built differently.</p>
+
+    <div style="max-width:420px;margin:0 auto 36px;text-align:left;">
+      <p style="font-size:17px;color:var(--cream);line-height:2.1;">Control your day, your way.<br/>Know what's next.<br/>Plan more.<br/>Finish more.<br/>Discover more.<br/>Connect with people who are moving where you're moving.</p>
+    </div>
+
+    <p style="font-size:15.5px;color:rgba(247,243,236,0.75);line-height:1.9;margin-bottom:36px;">And when the work is done? Maybe MEAT finds something worth doing, and a fellow Meatie worth sharing it with.</p>
+
+    <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:clamp(20px,2.8vw,25px);color:var(--cream);line-height:1.6;margin-bottom:8px;">Because productivity isn't the destination.</p>
+    <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:clamp(22px,3.2vw,28px);color:#E8C66B;line-height:1.6;margin-bottom:40px;">Living is.</p>
+
+    <div style="max-width:480px;margin:0 auto;padding:32px 34px;background:rgba(247,243,236,0.06);border:1px solid rgba(247,243,236,0.15);">
+      <p style="font-size:16px;color:var(--cream);line-height:1.7;">This is your life.<br/>Just a little more MEAT.</p>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="section beige" id="your-move" style="text-align:center;">
+  <div class="container">
+    <p class="section-eyebrow">YOUR MOVE</p>
+    <h2 class="section-title">Build With MEAT,<br>or <em style="font-style:italic;color:var(--cream);">build your own concept.</em></h2>
+    <p class="hero-body" style="margin-left:auto;margin-right:auto;">Whatever you're building — a business, a brand, a first idea you haven't said out loud yet — MEAT Empire is the infrastructure to build it with, not alone.</p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:32px;">
+      <button class="hero-cta" onclick="openModal('firstStep')">Build With MEAT →</button>
+      <button class="hero-cta" style="background:transparent;color:var(--cream);border:1px solid var(--dark);" onclick="openModal('firstStep')">Build Your Own Concept →</button>
+    </div>
+
+    <p style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--cream);margin-top:48px;font-weight:600;text-align:center;">The World Is Built On MEAT.</p>
+    <p style="font-size:14px;color:rgba(247,243,236,0.75);margin-top:6px;text-align:center;">People. Purpose. Action. Connection.</p>
+    <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:clamp(16px,2.2vw,19px);color:var(--cream);text-align:center;margin-top:16px;">We will be the MEAT map for everyday lives.</p>
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:rgba(247,243,236,0.75);max-width:480px;margin:20px auto 0;line-height:1.7;text-align:center;">"MEAT helps people know what to do now, what to do next, and who I can do it with."</p>
+    <p style="font-size:13.5px;color:rgba(247,243,236,0.75);max-width:480px;margin:16px auto 0;line-height:1.8;text-align:center;">MEAT should be easier to use than the life problem it's helping you solve. If opening the app ever feels like work, that's on us to fix.</p>
+  </div>
+</div>
+
+<footer>
+  <div style="margin-bottom:24px;">
+    <img src="meat-logo-gold.png" alt="" style="height:64px;width:64px;object-fit:contain;opacity:0.7;"/>
+  </div>
+  <h2 class="section-title">You grow. We grow. We grow together.</h2>
+  <p>MEAT Empire is infrastructure for every creator. Whether you're scared or confident. Experienced or brand new.</p>
+  <p style="margin-top:28px;"><strong>Your ideas remain yours. Your economics are transparent. Your growth compounds for everyone.</strong></p>
+  <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:clamp(20px,2.8vw,26px);color:var(--cream);margin-top:24px;">Let's MEAT.</p>
+  <div style="margin:48px auto 0;max-width:860px;padding-top:36px;border-top:1px solid var(--border-color);">
+    <p style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;opacity:.7;margin-bottom:8px;">The MEATVerse</p>
+    <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:15px;color:var(--cream);margin-bottom:20px;">The connected world of MEAT — built around real people, real life, and real progress. 💚</p>
+    <div style="display:flex;gap:32px;justify-content:center;flex-wrap:wrap;">
+      <a href="https://meathospitalitygroup.com" target="_blank" rel="noopener" style="color:var(--cream);text-decoration:none;font-size:14px;font-weight:500;">MEAT Hospitality Group →</a>
+      <a href="https://meatverse.co" target="_blank" rel="noopener" style="color:var(--cream);text-decoration:none;font-size:14px;font-weight:500;">MEATVerse →</a>
+      <a href="https://storemhg.com" target="_blank" rel="noopener" style="color:var(--cream);text-decoration:none;font-size:14px;font-weight:500;">MEAT Hospitality Group Store →</a>
+    </div>
+    <p style="font-size:13px;opacity:.7;line-height:1.7;max-width:520px;margin:22px auto 0;">MEAT Empire is the build layer. MEATVerse connects you to everything MEAT can become. MEAT Hospitality Group is proof it works.</p>
+    <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:14px;color:rgba(247,243,236,.85);margin-top:20px;">MEAT — life organization as easy as MEATing. 💚</p>
+    <p style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(247,243,236,.8);line-height:2;margin-top:20px;">Quality with purpose.<br>Priced for real life.<br>Built for people who keep going.</p>
+  </div>
+  <p style="margin-top:32px;font-size:13px;">
+    <a href="mailto:holdenkrivelin@meatapp.tech" style="color:rgba(247,243,236,.7);">holdenkrivelin@meatapp.tech</a>
+    &nbsp;·&nbsp;
+    <a href="tel:6462341182" style="color:rgba(247,243,236,.7);">(646) 234-1182</a>
+  </p>
+  <p style="margin-top:14px;font-size:13px;">
+    <a href="https://instagram.com/meathospitalitygroup" target="_blank" rel="noopener" style="color:rgba(247,243,236,.7);text-decoration:underline;">Instagram</a>
+    &nbsp;·&nbsp;
+    <a href="https://open.spotify.com/show/7n7DseikNZ9vinU5Oszyit" target="_blank" rel="noopener" style="color:rgba(247,243,236,.7);text-decoration:underline;">Podcast</a>
+  </p>
+  <p style="margin-top:14px;font-size:11px;letter-spacing:.05em;">
+    <a href="https://meathospitalitygroup.com#privacy-policy" target="_blank" rel="noopener" style="color:rgba(247,243,236,.7);text-decoration:underline;">Privacy Policy</a>
+    &nbsp;·&nbsp;
+    <a href="https://meathospitalitygroup.com#terms" target="_blank" rel="noopener" style="color:rgba(247,243,236,.7);text-decoration:underline;">Terms of Service</a>
+  </p>
+  <p style="margin-top:40px; font-size:12px; opacity:0.6;">Built by creators, for creators.</p>
+  <p style="margin-top:10px; font-size:11px; opacity:0.7;">MEAT Hospitality Group LLC · New York, NY</p>
+</footer>
+
+<div class="modal" id="firstStep">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2 class="modal-title">Take the First Step</h2>
+      <button class="modal-close" onclick="closeModal('firstStep')">×</button>
+    </div>
+    <p style="font-size:13px; color:var(--muted); margin-bottom:24px; line-height:1.7;">Tell us what brought you here — an idea, a concept, or just curiosity. All of it counts as a first step.</p>
+    <div class="form-group"><label>Your Name</label><input type="text" placeholder="What should we call you?" data-field="name"></div>
+    <div class="form-group"><label>Your Email</label><input type="email" placeholder="How do we reach you?" data-field="email"></div>
+    <div class="form-group"><label>What Brings You Here</label><textarea placeholder="An idea, a project, what you'd want to build or use MEAT for — or just what caught your interest. Optional." data-field="idea"></textarea></div>
+    <p id="firstStep-error" style="display:none;font-size:12.5px;color:#B5433D;margin-bottom:12px;">Please fill in your name and email.</p>
+    <div class="form-actions">
+      <button class="btn" onclick="closeModal('firstStep')">Not Yet</button>
+      <button class="btn btn-gold" onclick="submitForm('firstStep')">Take the First Step →</button>
+    </div>
+    <div class="confirmation" id="firstStep-confirm">✓ Welcome to MEAT Empire. Check your email.</div>
+  </div>
+</div>
+
+<div class="modal" id="learnHolden">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2 class="modal-title">Holden's Story</h2>
+      <button class="modal-close" onclick="closeModal('learnHolden')">×</button>
+    </div>
+    <p style="font-size:13px; color:var(--muted); margin-bottom:16px;"><strong>Fear:</strong> "What if it doesn't work?"</p>
+    <p style="font-size:13px; color:var(--muted); margin-bottom:16px;"><strong>Action:</strong> Built it anyway. Kept going.</p>
+    <div style="text-align:center; margin-top:24px;"><button class="btn btn-gold" onclick="closeModal('learnHolden'); openModal('firstStep')">Take the First Step →</button></div>
+  </div>
+</div>
+
+<div class="modal" id="citySelect">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2 class="modal-title">Select City</h2>
+      <button class="modal-close" onclick="closeModal('citySelect')">×</button>
+    </div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+      <button class="btn btn-gold" onclick="closeModal('citySelect')">NYC</button>
+      <button class="btn" onclick="showCitySoon('Los Angeles')">Los Angeles</button>
+      <button class="btn" onclick="showCitySoon('San Francisco')">San Francisco</button>
+      <button class="btn" onclick="showCitySoon('Chicago')">Chicago</button>
+    </div>
+    <p id="citySoonMsg" style="display:none;font-size:13px;color:var(--cream);text-align:center;margin-top:16px;font-style:italic;"></p>
+  </div>
+</div>
+
+<script>
+function toggleLargeText() {
+  const isLarge = document.body.classList.toggle('large-text');
+  const btn = document.getElementById('a11yToggle');
+  if (btn) {
+    btn.style.background = isLarge ? '#E8C66B' : 'transparent';
+    btn.style.color = isLarge ? '#2C3A28' : '#F7F3EC';
+  }
+  try { localStorage.setItem('meatempire-textsize', isLarge ? 'large' : 'normal'); } catch(e) {}
+}
+
+function initializeTextSize() {
+  try {
+    if (localStorage.getItem('meatempire-textsize') === 'large') {
+      document.body.classList.add('large-text');
+      const btn = document.getElementById('a11yToggle');
+      if (btn) { btn.style.background = '#E8C66B'; btn.style.color = '#2C3A28'; }
+    }
+  } catch(e) {}
+}
+document.addEventListener('DOMContentLoaded', initializeTextSize);
+
+function toggleDarkMode() {
+  const isLight = document.body.classList.toggle('light-mode');
+  const btn = document.getElementById('modeBtn');
+
+  if (isLight) {
+    btn.innerHTML = '🌙<span class="mode-label"> Dark</span>';
+    localStorage.setItem('meatempire-theme', 'light');
+  } else {
+    btn.innerHTML = '☀️<span class="mode-label"> Light</span>';
+    localStorage.setItem('meatempire-theme', 'dark');
+  }
+}
+
+function initializeDarkMode() {
+  const btn = document.getElementById('modeBtn');
+  const savedTheme = localStorage.getItem('meatempire-theme');
+
+  if (savedTheme === 'light') {
+    document.body.classList.add('light-mode');
+    if (btn) btn.innerHTML = '🌙<span class="mode-label"> Dark</span>';
+  } else {
+    if (btn) btn.innerHTML = '☀️<span class="mode-label"> Light</span>';
+  }
+}
+
+function toggleMobileMenu() {
+  const panel = document.getElementById('mobileMenuPanel');
+  const toggle = document.getElementById('empireMenuToggle');
+  const isOpen = toggle.checked || panel.style.display === 'flex' || panel.style.display === 'block';
+  if (isOpen) {
+    panel.style.display = 'none';
+    toggle.checked = false;
+    document.body.classList.remove('menu-open');
+  } else {
+    panel.style.display = 'block';
+    toggle.checked = true;
+    document.body.classList.add('menu-open');
+  }
+}
+
+// Keep page content clear of the fixed centered nav regardless of its
+// rendered height (which can vary slightly by font, zoom, or viewport).
+(function(){
+  function syncNavHeight(){
+    var nav = document.querySelector('nav');
+    if(!nav) return;
+    document.body.style.paddingTop = nav.offsetHeight + 'px';
+  }
+  syncNavHeight();
+  window.addEventListener('resize', syncNavHeight);
+  window.addEventListener('load', syncNavHeight);
+})();
+
+function openModal(id) {
+  const modal = document.getElementById(id);
+  if (modal) {
+    modal.classList.add('show');
+  }
+  if (id === 'citySelect') {
+    const msg = document.getElementById('citySoonMsg');
+    if (msg) { msg.style.display = 'none'; msg.textContent = ''; }
+  }
+}
+
+function closeModal(id) {
+  const modal = document.getElementById(id);
+  if (modal) {
+    modal.classList.remove('show');
+  }
+  const confirm = document.getElementById(id + '-confirm');
+  if (confirm) confirm.classList.remove('show');
+  const err = document.getElementById(id + '-error');
+  if (err) err.style.display = 'none';
+}
+
+function showCitySoon(city) {
+  const msg = document.getElementById('citySoonMsg');
+  if (msg) {
+    msg.textContent = city + ' is coming soon — NYC is where we\'re starting.';
+    msg.style.display = 'block';
+  }
+}
+
+function submitForm(modalId) {
+  const modal = document.getElementById(modalId);
+  const inputs = modal.querySelectorAll('input, textarea');
+  const formData = {};
+  
+  inputs.forEach(input => {
+    const field = input.dataset.field;
+    if (field) {
+      formData[field] = input.value;
+    }
+  });
+  
+  if (!formData.name || !formData.email) {
+    const err = document.getElementById(modalId + '-error');
+    if (err) { err.style.display = 'block'; }
+    return;
+  }
+
+  const err = document.getElementById(modalId + '-error');
+  if (err) { err.style.display = 'none'; }
+  
+  const confirm = document.getElementById(modalId + '-confirm');
+  if (confirm) {
+    confirm.classList.add('show');
+    setTimeout(() => {
+      closeModal(modalId);
+      confirm.classList.remove('show');
+      inputs.forEach(input => input.value = '');
+    }, 2500);
+  }
+}
+
+document.querySelectorAll('.modal').forEach(modal => {
+  modal.addEventListener('click', e => {
+    if (e.target === modal) {
+      closeModal(modal.id);
+    }
+  });
+});
+
+document.addEventListener('DOMContentLoaded', initializeDarkMode);
+</script>
+
+</body>
+</html>
