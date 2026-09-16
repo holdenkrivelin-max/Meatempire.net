@@ -4,17 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MEAT Empire — You Have an Idea. That's Enough.</title>
-  <meta name="description" content="MEAT Empire is the build layer for people with ideas — helping turn a half-formed idea into a first testable step."/>
+  <meta name="description" content="MEAT Empire is an early-stage creator initiative for turning an idea into one clear, testable first step."/>
   <meta name="robots" content="index, follow"/>
   <link rel="canonical" href="https://meatempire.net/"/>
   <meta property="og:type" content="website"/>
   <meta property="og:site_name" content="MEAT Empire"/>
   <meta property="og:title" content="MEAT Empire — You Have an Idea. That's Enough."/>
-  <meta property="og:description" content="MEAT Empire is the build layer for people with ideas — helping turn a half-formed idea into a first testable step."/>
+  <meta property="og:description" content="An early-stage creator initiative for turning an idea into one clear, testable first step."/>
   <meta property="og:url" content="https://meatempire.net/"/>
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:title" content="MEAT Empire — You Have an Idea. That's Enough."/>
-  <meta name="twitter:description" content="You have an idea. That's enough. MEAT Empire is the build layer for people with ideas."/>
+  <meta name="twitter:description" content="You have an idea. That's enough. Start by making the next step clear."/>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%232C3A28'/%3E%3Ccircle cx='50' cy='50' r='46' fill='none' stroke='%237A9270' stroke-width='2'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='52' fill='%237A9270' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E"/>
   <script type="application/ld+json">
   {
@@ -22,7 +22,7 @@
     "@type": "Organization",
     "name": "MEAT Empire",
     "url": "https://meatempire.net/",
-    "description": "The build layer for people with ideas — helping turn a half-formed idea into a first testable step.",
+    "description": "An early-stage creator initiative for turning an idea into one clear, testable first step.",
     "parentOrganization": {
       "@type": "Organization",
       "name": "MEAT Hospitality Group",
@@ -263,13 +263,67 @@
       .modal-content { padding: 28px; }
     }
   </style>
+  <style id="meat-app-theme">
+    :root{--app-bg:#fff8ef;--app-surface:#fffdf8;--app-ink:#572211;--app-muted:#7c6259;--app-hero:#70240d;--app-hero-glow:#b65b26;--app-accent:#e6b63f;--app-violet:#7859c7;--app-border:rgba(87,34,17,.18)}
+    html[data-meat-theme="violet"]{--app-bg:#fbf8ff;--app-surface:#fffaff;--app-ink:#301647;--app-muted:#715f7b;--app-hero:#45205c;--app-hero-glow:#7551a1;--app-accent:#d8b14b;--app-violet:#7957c7;--app-border:rgba(48,22,71,.18)}
+    html[data-meat-theme="forest"]{--app-bg:#f7fbf4;--app-surface:#fdfffb;--app-ink:#173b2f;--app-muted:#5f736b;--app-hero:#1e513c;--app-hero-glow:#42765a;--app-accent:#e3b64a;--app-violet:#7656ba;--app-border:rgba(23,59,47,.18)}
+    html[data-meat-theme="night"]{--app-bg:#17100c;--app-surface:#241912;--app-ink:#fff8ef;--app-muted:#d6c5ba;--app-hero:#4f1c0c;--app-hero-glow:#8c421f;--app-accent:#e6b63f;--app-violet:#9b80e8;--app-border:rgba(255,248,239,.18)}
+    body,body.light-mode{background:var(--app-bg)!important;color:var(--app-ink)!important}
+    nav,body.dark-mode nav{background:color-mix(in srgb,var(--app-surface) 94%,transparent)!important;border-color:var(--app-border)!important;backdrop-filter:blur(18px)}
+    nav .nav-center-name,nav .nav-main-menu-btn,nav .nav-logo,nav .mode-toggle,nav .city-selector{color:var(--app-ink)!important;border-color:var(--app-border)!important}
+    nav .nav-center-name strong,nav .nav-main-menu-btn:hover{color:var(--app-accent)!important}
+    .hero{max-width:none!important;margin:0!important;padding:72px var(--spacing-base) 96px!important;background:radial-gradient(circle at 80% 10%,var(--app-hero-glow),transparent 38%),linear-gradient(135deg,var(--app-hero),#3a1207)!important;color:#fff8ef!important}
+    .hero h1,.hero h2,.hero-main,.hero-main[style],.hero-body,.hero [style*="color:#F7F3EC"],.hero [style*="color: #F7F3EC"]{color:#fff8ef!important}
+    .hero em,.hero-eyebrow{color:var(--app-accent)!important}
+    .section,.section.beige{background:var(--app-bg)!important;color:var(--app-ink)!important;border-color:var(--app-border)!important}
+    .section.dark,footer{background:linear-gradient(135deg,var(--app-hero),#321006)!important;color:#fff8ef!important;border-color:var(--app-accent)!important}
+    .section.dark *,footer *{border-color:color-mix(in srgb,#fff8ef 22%,transparent)}
+    .section.dark .section-title,footer .section-title{color:#fff8ef!important}
+    .section-title,.section-desc,.section-eyebrow{color:var(--app-ink)!important}
+    .section-eyebrow,.section.dark .section-eyebrow{color:var(--app-accent)!important}
+    .proof-box,.story-card,.process-step,.collab-card,.activity-item,.event-snapshot,.mission-block,.initiative-card,.form-box,.modal-content{background:var(--app-surface)!important;color:var(--app-ink)!important;border-color:var(--app-border)!important;border-radius:24px!important;box-shadow:0 12px 30px rgba(69,31,14,.07)}
+    .form-group input,.form-group textarea,.form-group select{background:var(--app-surface)!important;color:var(--app-ink)!important;border-color:var(--app-border)!important;border-radius:16px!important}
+    .btn,.nav-btn,.hero-cta,.btn-enter,.btn-gold{background:var(--app-accent)!important;color:var(--app-ink)!important;border-color:var(--app-accent)!important;border-radius:999px!important}
+    .btn:hover,.nav-btn:hover,.hero-cta:hover,.btn-enter:hover,.btn-gold:hover{background:var(--app-violet)!important;color:#fff!important;border-color:var(--app-violet)!important}
+    .meat-theme-picker{position:relative;right:auto;bottom:auto;z-index:1000;font-family:'Jost',sans-serif}
+    .meat-theme-button{display:flex;align-items:center;gap:9px;border:1px solid var(--app-border);border-radius:999px;background:var(--app-surface);color:var(--app-ink);padding:10px 14px;box-shadow:0 10px 25px rgba(49,21,9,.16);font:600 12px 'Jost',sans-serif;cursor:pointer}
+    .meat-theme-dot{width:12px;height:12px;border-radius:50%;background:var(--app-accent);box-shadow:0 0 0 3px var(--app-bg)}
+    .meat-theme-options{display:none;position:absolute;right:0;top:calc(100% + 10px);bottom:auto;width:190px;padding:10px;background:var(--app-surface);border:1px solid var(--app-border);border-radius:20px;box-shadow:0 16px 36px rgba(49,21,9,.2)}
+    .meat-theme-picker.open .meat-theme-options{display:grid;gap:6px}
+    .meat-theme-option{border:0;background:transparent;color:var(--app-ink);display:flex;align-items:center;gap:9px;padding:9px;border-radius:12px;font:500 12px 'Jost',sans-serif;text-align:left;cursor:pointer}
+    .meat-theme-option:hover{background:var(--app-bg)} .meat-swatch{width:20px;height:20px;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 1px var(--app-border)}
+    @media(max-width:700px){.meat-theme-picker{right:auto;bottom:auto}.meat-theme-button{padding:9px 12px}.hero{padding:58px 24px 68px!important}}
+  </style>
+<style id="meat-app-polish">
+  :root{--app-accent-text:#80600f}html[data-meat-theme="night"]{--app-accent-text:#e6b63f}html{scroll-behavior:smooth} body{background:var(--app-bg)!important} nav{box-shadow:0 8px 28px rgba(49,21,9,.08)}
+  nav button,nav summary,.nav-btn,.nav-main-menu-btn,.mode-toggle,.city-selector{border-radius:999px!important}
+  .hero{position:relative;overflow:hidden;border-radius:0 0 44px 44px!important;box-shadow:0 20px 55px rgba(49,21,9,.13)}
+  .hero::after{content:"";position:absolute;inset:auto -18% -42% 46%;width:58vw;height:58vw;border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,var(--app-accent) 20%,transparent),transparent 68%);pointer-events:none}
+  .section{border-radius:34px;margin:20px auto;max-width:1440px;overflow:hidden}.section>.container{position:relative;z-index:1}
+  .proof-box,.story-card,.process-step,.collab-card,.activity-item,.event-snapshot,.mission-block,.initiative-card,.form-box,.modal-content{transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease}
+  .proof-box:hover,.story-card:hover,.process-step:hover,.collab-card:hover,.activity-item:hover,.event-snapshot:hover{transform:translateY(-4px);box-shadow:0 18px 38px rgba(69,31,14,.12)!important;border-color:color-mix(in srgb,var(--app-accent) 58%,var(--app-border))!important}
+  .form-group input,.form-group textarea,.form-group select{min-height:52px;font-size:16px!important;padding:14px 16px!important}
+  button,a,input,select,textarea{transition:background-color .22s ease,color .22s ease,border-color .22s ease,transform .22s ease,box-shadow .22s ease}
+  button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--app-violet)!important;outline-offset:3px!important}
+  .meat-welcome{display:flex;width:max-content;max-width:calc(100% - 32px);align-items:center;gap:10px;margin:0 auto 28px;padding:10px 16px;border:1px solid color-mix(in srgb,var(--app-accent) 55%,transparent);border-radius:999px;background:color-mix(in srgb,var(--app-surface) 12%,transparent);color:#fff8ef;font:500 13px 'Jost',sans-serif;letter-spacing:.03em;backdrop-filter:blur(10px);position:relative;z-index:2}.meat-welcome-dot{width:9px;height:9px;border-radius:50%;background:var(--app-accent);box-shadow:0 0 0 4px color-mix(in srgb,var(--app-accent) 16%,transparent)}
+  .meat-motion-toggle,.meat-text-toggle{border:1px solid var(--app-border);background:var(--app-surface);color:var(--app-ink);height:34px;min-width:34px;padding:0 9px;border-radius:999px;font:600 11px 'Jost',sans-serif;cursor:pointer}
+  .meat-signoff{margin:28px auto 0!important;color:#fff8ef!important;font-family:'Cormorant Garamond',serif!important;font-size:clamp(20px,2.5vw,27px)!important;font-style:italic;opacity:1!important}
+  body.meat-motion-ready .meat-reveal{opacity:0;transform:translateY(18px)}body.meat-motion-ready .meat-reveal.meat-visible{opacity:1;transform:none;transition:opacity .55s ease,transform .55s ease}
+  body.meat-large-text{font-size:112.5%}body.meat-reduced-motion *,body.meat-reduced-motion *::before,body.meat-reduced-motion *::after{scroll-behavior:auto!important;animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+  #modeBtn{display:none!important}.proof-box :is(h1,h2,h3,h4,p,span,div),.story-card :is(h1,h2,h3,h4,p,span,div),.process-step :is(h1,h2,h3,h4,p,span,div),.collab-card :is(h1,h2,h3,h4,p,span,div),.activity-item :is(h1,h2,h3,h4,p,span,div),.event-snapshot :is(h1,h2,h3,h4,p,span,div),.modal-content :is(h1,h2,h3,h4,p,span,div){color:var(--app-ink)!important}.proof-number,.story-title,.process-day,.collab-role,.section:not(.dark) .section-eyebrow{color:var(--app-accent-text)!important}.meat-theme-option[aria-checked="true"]{background:var(--app-bg);font-weight:700}
+  @media(max-width:700px){.section{border-radius:26px;margin:12px 8px}.hero{border-radius:0 0 30px 30px!important}.nav-utils{gap:5px!important;right:8px!important}.city-selector{display:none!important}.meat-theme-name,.mode-label,.meat-control-label{display:none}.meat-theme-button{padding:8px 10px!important}.meat-welcome{font-size:11px;margin-bottom:20px}.form-group input,.form-group textarea,.form-group select{min-height:56px}.hero-cta,.nav-btn,.btn{min-height:48px!important}}
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}}
+</style>
+<style id="meat-next-card-style">
+  .meat-next-panel{margin:20px auto;max-width:920px;padding:0 20px}.meat-next-card{background:var(--app-surface);color:var(--app-ink);border:1px solid var(--app-border);border-radius:28px;padding:34px clamp(24px,5vw,52px);box-shadow:0 16px 38px rgba(69,31,14,.09);text-align:center}.meat-next-kicker{margin:0 0 12px;color:var(--app-accent-text);font:700 11px 'Jost',sans-serif;letter-spacing:.25em;text-transform:uppercase}.meat-next-title{margin:0;font:600 clamp(28px,4vw,43px)/1.08 'Cormorant Garamond',serif;color:var(--app-ink)}.meat-next-copy{max-width:590px;margin:15px auto 0;color:var(--app-muted);font:400 16px/1.75 'Jost',sans-serif}.meat-next-note{margin:16px auto 0;color:var(--app-accent-text);font:600 13px/1.5 'Jost',sans-serif}.meat-next-cta{display:inline-flex;align-items:center;justify-content:center;min-height:48px;margin-top:24px;padding:0 24px;border-radius:999px;background:var(--app-accent);color:var(--app-ink)!important;font:700 12px 'Jost',sans-serif;letter-spacing:.13em;text-decoration:none;text-transform:uppercase}.meat-next-cta:hover{background:var(--app-violet);color:#fff!important}@media(max-width:700px){.meat-next-panel{margin:12px 8px;padding:0}.meat-next-card{border-radius:24px;padding:30px 22px}.meat-next-copy{font-size:15px}}
+</style>
 </head>
 <body>
 
 <input id="empireMenuToggle" type="checkbox" aria-hidden="true" tabindex="-1" style="position:fixed;opacity:0;pointer-events:none;"/>
 <nav>
   <a class="nav-corner-brand" href="https://meatempire.net/" aria-label="MEAT Empire home">
-    <img src="meat-logo-gold.png" alt=""/>
+    <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Crect%20x='4'%20y='4'%20width='92'%20height='92'%20rx='18'%20fill='%23fff8ef'%20stroke='%23d9ad43'%20stroke-width='3'/%3E%3Cpath%20d='M22%2075V25l28%2031%2028-31v50'%20fill='none'%20stroke='%23c89528'%20stroke-width='9'%20stroke-linecap='round'%20stroke-linejoin='round'/%3E%3Cpath%20d='M35%2075V53M65%2075V53M35%2064h30'%20fill='none'%20stroke='%238f6919'%20stroke-width='4'/%3E%3C/svg%3E" alt=""/>
   </a>
   <div class="nav-utils">
     <div class="city-selector" onclick="openModal('citySelect')" style="cursor:pointer;">📍 NYC ▼</div>
@@ -278,7 +332,7 @@
   </div>
 
   <div class="nav-center">
-    <img class="nav-center-m" src="meat-logo-gold.png" alt="MEAT Empire"/>
+    <img class="nav-center-m" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Crect%20x='4'%20y='4'%20width='92'%20height='92'%20rx='18'%20fill='%23fff8ef'%20stroke='%23d9ad43'%20stroke-width='3'/%3E%3Cpath%20d='M22%2075V25l28%2031%2028-31v50'%20fill='none'%20stroke='%23c89528'%20stroke-width='9'%20stroke-linecap='round'%20stroke-linejoin='round'/%3E%3Cpath%20d='M35%2075V53M65%2075V53M35%2064h30'%20fill='none'%20stroke='%238f6919'%20stroke-width='4'/%3E%3C/svg%3E" alt="MEAT Empire"/>
     <p class="nav-center-name">MEAT <strong>Empire</strong></p>
     <label class="nav-main-menu-btn" for="empireMenuToggle" role="button" tabindex="0" aria-label="Open menu">Menu</label>
     <button class="nav-btn" style="margin-top:0;" onclick="openModal('firstStep')">Take the First Step ↓</button>
@@ -326,25 +380,29 @@
 <div class="hero">
   <h1 style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(52px,11vw,96px);letter-spacing:.18em;color:var(--cream);line-height:1;margin-bottom:6px;">MEAT</h1>
   <p style="font-weight:200;font-size:clamp(22px,4.5vw,34px);letter-spacing:.35em;text-transform:uppercase;color:#E8C66B;margin-bottom:32px;">Empire</p>
-  <p class="hero-eyebrow">FOR EVERYONE</p>
+  <p class="hero-eyebrow">AN EARLY-STAGE CREATOR INITIATIVE</p>
   <h1 class="hero-main" style="color:#F7F3EC;">You have an idea.<br><em>That's enough.</em></h1>
-  <p class="hero-body">You don't need permission. You don't need to be ready. You don't need years of experience. You need an idea and the willingness to take one step. MEAT Empire helps you turn that idea into action.</p>
-
-  <p style="font-size:12px;letter-spacing:.08em;color:var(--muted);margin-top:24px;">Connect · Plan · Move · Fuel · Grow · Make Impact</p>
+  <p class="hero-body">MEAT Empire is being developed to help people turn an idea into one clear, testable first step. You do not need a finished business or a perfect plan—just something worth exploring and the willingness to begin.</p>
 
   <div style="max-width:520px;margin:20px auto 0;padding:20px 24px;border:1px solid var(--border-color);text-align:left;">
-    <p style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#E8C66B;margin-bottom:10px;text-align:center;">Empire, in One Breath</p>
-    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:var(--cream);line-height:1.6;margin-bottom:8px;text-align:center;">MEAT is an action platform built to change the way people move, meet, plan, and execute.</p>
-    <p style="font-family:'Jost',sans-serif;font-weight:700;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#E8C66B;text-align:center;margin-bottom:12px;">Make Every Action Count.</p>
-    <p style="font-size:13px;color:var(--cream);text-align:center;line-height:1.7;margin-bottom:12px;">MEAT brings connection, opportunity, and action into one place — so people can meet the right people, work toward what matters, and complete what they started.</p>
-    <p style="font-size:12.5px;color:#E8C66B;text-align:center;line-height:1.6;margin-bottom:10px;font-style:italic;">MEAT helps turn intention into movement.</p>
-    <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:14px;color:var(--cream);text-align:center;margin-bottom:10px;">Don't just scroll through life. Go live it.</p>
-    <p style="font-size:13px;color:var(--muted);text-align:center;line-height:1.7;margin-bottom:16px;">MEAT helps people discover what matters, connect with the right people, go do something, and complete what they started.</p>
-    <p style="font-size:14px;color:var(--muted);line-height:1.85;">MEAT Empire is not another general AI chat. It is the build layer for creators: bring an idea, shape the first step, test it with real people, and build from there. Your idea stays yours while MEAT connects it to direction, practical tools, community, and a real path to launch.</p>
+    <p style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#E8C66B;margin-bottom:10px;text-align:center;">What MEAT Empire Is</p>
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:var(--cream);line-height:1.7;margin-bottom:12px;text-align:center;">A developing creator pathway from idea → first step → honest feedback → informed next move.</p>
+    <p style="font-size:13px;color:var(--muted);text-align:center;line-height:1.7;margin-bottom:12px;">It is early. The invitation today is simple: tell us what you are building and why it matters.</p>
+    <p style="font-size:12.5px;color:#E8C66B;text-align:center;line-height:1.6;">No instant-launch promises. No guarantees. A serious place to begin.</p>
   </div>
 
-  <button class="hero-cta" onclick="openModal('firstStep')">Take the First Step →</button>
+  <button class="hero-cta" onclick="openModal('firstStep')">Share Your Idea →</button>
 </div>
+
+<section class="meat-next-panel" aria-labelledby="meat-next-title">
+  <div class="meat-next-card">
+    <p class="meat-next-kicker">MEAT Next</p>
+    <h2 class="meat-next-title" id="meat-next-title">One meaningful next step at a time.</h2>
+    <p class="meat-next-copy">MEAT is built to make the next step feel clear, simple, and yours—without pressure to have everything figured out.</p>
+    <p class="meat-next-note">Your choices stay yours.</p>
+    <a class="meat-next-cta" href="https://meathospitalitygroup.com/#waitlist" target="_blank" rel="noopener">Become a Meatie</a>
+  </div>
+</section>
 
 <!-- BEFORE THE WORLD RECOGNIZES IT -->
 <div id="before-the-world-recognizes-it" class="section beige">
@@ -377,17 +435,17 @@
 
     <div style="margin-top:40px;margin-bottom:36px;">
       <p style="font-family:'Jost',sans-serif;font-weight:700;font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:#E8C66B;margin-bottom:10px;">01 · What is this?</p>
-      <p style="font-size:16.5px;color:rgba(247,243,236,0.85);line-height:1.85;">MEAT Empire is where builders, operators, creators, and entrepreneurs bring an idea they want to build — and test it with real people before spending real money.</p>
+      <p style="font-size:16.5px;color:rgba(247,243,236,0.85);line-height:1.85;">MEAT Empire is an early-stage initiative for people with an idea they want to understand, shape, and test thoughtfully.</p>
     </div>
 
     <div style="margin-bottom:36px;">
-      <p style="font-family:'Jost',sans-serif;font-weight:700;font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:#E8C66B;margin-bottom:10px;">02 · Oh, I get it.</p>
-      <p style="font-size:16.5px;color:rgba(247,243,236,0.85);line-height:1.85;">Bring a half-formed idea. We help you shape it into one small, testable first step, and put it in front of real people for real feedback. If it resonates, it grows into something real — with MEAT's infrastructure behind you, not alone.</p>
+      <p style="font-family:'Jost',sans-serif;font-weight:700;font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:#E8C66B;margin-bottom:10px;">02 · What happens first?</p>
+      <p style="font-size:16.5px;color:rgba(247,243,236,0.85);line-height:1.85;">We begin by understanding the idea, the person it is meant to help, and the smallest useful assumption worth testing.</p>
     </div>
 
     <div style="margin-bottom:36px;">
-      <p style="font-family:'Jost',sans-serif;font-weight:700;font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:#E8C66B;margin-bottom:10px;">03 · This is interesting.</p>
-      <p style="font-size:16.5px;color:rgba(247,243,236,0.85);line-height:1.85;margin-bottom:18px;">It's not just a place to pitch an idea once. The MEAT App helps you track what's next and remember every step along the way. And MEAT will keep growing to help you find people building in a similar direction.</p>
+      <p style="font-family:'Jost',sans-serif;font-weight:700;font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:#E8C66B;margin-bottom:10px;">03 · What happens next?</p>
+      <p style="font-size:16.5px;color:rgba(247,243,236,0.85);line-height:1.85;margin-bottom:18px;">What we learn determines the next move: refine the idea, run a small test, pause it, or continue. Submitting an idea does not promise funding, partnership, or launch.</p>
     </div>
 
     <div style="text-align:center;padding-top:8px;">
@@ -405,7 +463,7 @@
   <div class="container">
     <p class="section-eyebrow">EARLY STAGE</p>
     <h2 class="section-title">This is just starting.</h2>
-    <p class="hero-body" style="margin-left:auto;margin-right:auto;">MEAT Empire doesn't have a roster of case studies yet — because it's brand new. What it has is a founder who built the first thing anyway, and an open door for whoever's next.</p>
+    <p class="hero-body" style="margin-left:auto;margin-right:auto;">MEAT Empire is in development. We are refining the process through MEAT's own build and conversations with early creators. We will only present services as available when they are ready.</p>
     <div style="text-align:center;margin-top:32px;">
       <button class="btn btn-gold" onclick="openModal('firstStep')">Take the First Step →</button>
     </div>
@@ -431,13 +489,13 @@
       </div>
       <div class="process-step" style="cursor:default;">
         <div class="process-day">03</div>
-        <div class="process-title">Test it with real people</div>
-        <div class="process-desc">Low stakes, real feedback — before you've committed money to something that might not work.</div>
+        <div class="process-title">Plan a useful test</div>
+        <div class="process-desc">Identify what you need to learn and how you could gather honest feedback before making a major commitment.</div>
       </div>
       <div class="process-step" style="cursor:default;">
         <div class="process-day">04</div>
-        <div class="process-title">Build from there</div>
-        <div class="process-desc">If it resonates, it grows into something real inside the MEATVerse — connected, not alone.</div>
+        <div class="process-title">Choose the next move</div>
+        <div class="process-desc">Use what you learn to refine, pause, or continue with greater clarity.</div>
       </div>
     </div>
   </div>
@@ -459,20 +517,20 @@
       <div class="collab-card" style="cursor:default;">
         <div class="collab-avatar">O</div>
         <div class="collab-name">Operators</div>
-        <div class="collab-role">Find your room</div>
-        <div class="collab-desc">Access to a network built for launching things, not just running them.</div>
+        <div class="collab-role">Turn insight into action</div>
+        <div class="collab-desc">Turn operational knowledge into a focused concept you can explain and test.</div>
       </div>
       <div class="collab-card" style="cursor:default;">
         <div class="collab-avatar">C</div>
         <div class="collab-name">Creators</div>
-        <div class="collab-role">Shape what's next</div>
-        <div class="collab-desc">Be in the room before an idea becomes something everyone's talking about.</div>
+        <div class="collab-role">Move beyond inspiration</div>
+        <div class="collab-desc">Give a creative idea a clear next action without forcing it into a finished business too soon.</div>
       </div>
       <div class="collab-card" style="cursor:default;">
         <div class="collab-avatar">E</div>
         <div class="collab-name">Entrepreneurs</div>
-        <div class="collab-role">Build with us</div>
-        <div class="collab-desc">Whatever the idea, MEAT's infrastructure and community might be the right place to build it.</div>
+        <div class="collab-role">Pressure-test the idea</div>
+        <div class="collab-desc">Clarify the need and test the core assumption before making a major spend.</div>
       </div>
     </div>
   </div>
@@ -491,10 +549,10 @@
         <div class="story-name">Holden</div>
         <div class="story-title">Founder • MEAT Empire</div>
         <div class="story-before"><strong>Before:</strong> "I have an idea for a marketplace where builders, operators, and creators can come and collab on the next big idea. I'm calling it MEAT."</div>
-        <div class="story-after"><strong>After:</strong> Built the platform. Kept going.</div>
+        <div class="story-after"><strong>After:</strong> Turned the idea into a working MEAT App rough draft and kept refining it through real use.</div>
       </div>
     </div>
-    <p style="text-align:center;font-size:14px;color:var(--muted);margin-top:24px;">This section grows as real creators build real things. Yours could be next.</p>
+    <p style="text-align:center;font-size:14px;color:var(--muted);margin-top:24px;">This is the first proof behind the process: begin, use it, learn, and refine.</p>
   </div>
 </div>
 
@@ -523,16 +581,16 @@
 
     <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:19px;color:var(--cream);margin-bottom:8px;">MEAT — for wherever life takes you.</p>
     <p style="font-family:'Jost',sans-serif;font-weight:700;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#E8C66B;margin-bottom:6px;">Make Every Action Count.</p>
-    <p style="font-size:13px;color:rgba(247,243,236,0.7);margin-bottom:6px;">Simple. Human. Useful. Positive.</p>
+    <p style="font-size:13px;color:rgba(247,243,236,0.7);margin-bottom:6px;">Simple. Human. Useful. Honest.</p>
     <p style="font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:rgba(247,243,236,0.6);margin-bottom:24px;">The Mission</p>
 
     <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:19px;color:#E8C66B;margin-bottom:6px;">Keep MEATing Forward.</p>
     <p style="font-size:12.5px;color:rgba(247,243,236,0.6);margin-bottom:28px;">💚 The culture. How Meaties sign off with each other.</p>
 
     <p style="font-size:14.5px;color:rgba(247,243,236,0.8);line-height:1.85;margin-bottom:8px;">One person. One step. One day at a time.</p>
-    <p style="font-size:14.5px;color:rgba(247,243,236,0.8);line-height:1.85;margin-bottom:8px;">MEAT gives people structure, connection, tools, and encouragement to keep moving forward in real life.</p>
-    <p style="font-size:14.5px;color:rgba(247,243,236,0.8);line-height:1.85;margin-bottom:8px;">MEAT helps people discover what matters, connect with the right people, go do something, and complete what they started.</p>
-    <p style="font-size:14.5px;color:rgba(247,243,236,0.8);line-height:1.85;margin-bottom:8px;">MEAT helps turn intention into movement.</p>
+    <p style="font-size:14.5px;color:rgba(247,243,236,0.8);line-height:1.85;margin-bottom:8px;">We build around real needs, make the next step clear, and learn from honest use.</p>
+    <p style="font-size:14.5px;color:rgba(247,243,236,0.8);line-height:1.85;margin-bottom:8px;">We say what is available now, what is still being tested, and what remains a vision.</p>
+    <p style="font-size:14.5px;color:rgba(247,243,236,0.8);line-height:1.85;margin-bottom:8px;">The person behind the idea matters as much as the idea itself.</p>
     <p style="font-family:'Jost',sans-serif;font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#E8C66B;margin-bottom:24px;">Connect. Work. Complete.</p>
 
     <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:18px;color:var(--cream);margin-bottom:24px;">Don't just scroll through life. Go live it.</p>
@@ -542,8 +600,8 @@
     <p style="font-size:14px;color:rgba(247,243,236,0.8);line-height:1.8;margin-bottom:6px;">Control what you share. See what matters. Discover what's next.</p>
     <p style="font-size:13px;color:rgba(247,243,236,0.68);line-height:1.75;font-style:italic;margin-bottom:24px;">Relevant, not overwhelming. Social, not invasive. Personal, not controlling. Actionable, not passive.</p>
 
-    <p style="font-size:14.5px;color:rgba(247,243,236,0.8);line-height:1.85;margin-bottom:8px;">Every interaction should leave the user with something they didn't have before.</p>
-    <p style="font-size:14.5px;color:rgba(247,243,236,0.8);line-height:1.85;margin-bottom:24px;">Human side: create meaningful connection. Technology side: create meaningful opportunity.</p>
+    <p style="font-size:14.5px;color:rgba(247,243,236,0.8);line-height:1.85;margin-bottom:8px;">Every interaction should leave someone with greater clarity than they had before.</p>
+    <p style="font-size:14.5px;color:rgba(247,243,236,0.8);line-height:1.85;margin-bottom:24px;">Use technology to support human judgment—not replace it.</p>
 
     <p style="font-size:14.5px;color:rgba(247,243,236,0.8);line-height:1.85;margin-bottom:8px;">You don't need everything figured out. You need a first step.</p>
     <p style="font-size:14.5px;color:rgba(247,243,236,0.8);line-height:1.85;margin-bottom:24px;">Starting is the hardest part. MEAT helps you make it real.</p>
@@ -557,7 +615,7 @@
 
     <div style="max-width:560px;margin:0 auto;padding:28px 30px;background:rgba(247,243,236,0.06);border:1px solid rgba(247,243,236,0.15);">
       <p style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#E8C66B;margin-bottom:14px;">The Legacy Statement</p>
-      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:var(--cream);line-height:1.85;">MEAT is bigger than one app, one category, or one person. It is being built as a companion for wherever life takes you — helping people know what matters, discover what's next, take action, and find direction.</p>
+      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:var(--cream);line-height:1.85;">Build something useful. Be honest about its stage. Keep listening. Take the next meaningful step.</p>
     </div>
   </div>
 </div>
@@ -566,17 +624,17 @@
 <div id="first-meaties-manifesto" class="section beige">
   <div class="container" style="max-width:640px;">
     <p style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#E8C66B;margin-bottom:20px;">For the First Meaties</p>
-    <p style="font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(24px,3.6vw,32px);color:var(--cream);line-height:1.5;margin-bottom:36px;">MEAT belongs in the hands of the first Meaties.</p>
+    <p style="font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(24px,3.6vw,32px);color:var(--cream);line-height:1.5;margin-bottom:36px;">The first creators help shape what comes next.</p>
 
-    <p style="font-size:16px;color:rgba(247,243,236,0.75);line-height:1.9;margin-bottom:28px;">We're surrounded by apps, companies, systems, and limitations telling us how to organize our lives.</p>
+    <p style="font-size:16px;color:rgba(247,243,236,0.75);line-height:1.9;margin-bottom:28px;">We are looking for curious people willing to test assumptions, give honest feedback, and build thoughtfully.</p>
 
     <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:clamp(19px,2.6vw,23px);color:#E8C66B;line-height:1.6;margin-bottom:36px;">MEAT is being built differently.</p>
 
     <div style="max-width:420px;margin:0 auto 36px;text-align:left;">
-      <p style="font-size:17px;color:var(--cream);line-height:2.1;">Control your day, your way.<br/>Know what's next.<br/>Plan more.<br/>Finish more.<br/>Discover more.<br/>Connect with people who are moving where you're moving.</p>
+      <p style="font-size:17px;color:var(--cream);line-height:2.1;">Bring the idea.<br/>Name the need.<br/>Define the first step.<br/>Learn from real feedback.<br/>Choose what deserves to happen next.</p>
     </div>
 
-    <p style="font-size:15.5px;color:rgba(247,243,236,0.75);line-height:1.9;margin-bottom:36px;">And when the work is done? Maybe MEAT finds something worth doing, and a fellow Meatie worth sharing it with.</p>
+    <p style="font-size:15.5px;color:rgba(247,243,236,0.75);line-height:1.9;margin-bottom:36px;">No status or perfect pitch is required. Participation begins with a conversation—not a promise of funding, partnership, or launch.</p>
 
     <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:clamp(20px,2.8vw,25px);color:var(--cream);line-height:1.6;margin-bottom:8px;">Because productivity isn't the destination.</p>
     <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:clamp(22px,3.2vw,28px);color:#E8C66B;line-height:1.6;margin-bottom:40px;">Living is.</p>
@@ -592,38 +650,33 @@
 <div class="section beige" id="your-move" style="text-align:center;">
   <div class="container">
     <p class="section-eyebrow">YOUR MOVE</p>
-    <h2 class="section-title">Build With MEAT,<br>or <em style="font-style:italic;color:var(--cream);">build your own concept.</em></h2>
-    <p class="hero-body" style="margin-left:auto;margin-right:auto;">Whatever you're building — a business, a brand, a first idea you haven't said out loud yet — MEAT Empire is the infrastructure to build it with, not alone.</p>
+    <h2 class="section-title">Have an idea<br><em style="font-style:italic;color:var(--cream);">worth testing?</em></h2>
+    <p class="hero-body" style="margin-left:auto;margin-right:auto;">Tell us what you are building, who it is for, and why it matters. The first goal is clarity—not a giant commitment.</p>
     <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:32px;">
-      <button class="hero-cta" onclick="openModal('firstStep')">Build With MEAT →</button>
-      <button class="hero-cta" style="background:transparent;color:var(--cream);border:1px solid var(--dark);" onclick="openModal('firstStep')">Build Your Own Concept →</button>
+      <button class="hero-cta" onclick="openModal('firstStep')">Take the First Step →</button>
     </div>
 
-    <p style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--cream);margin-top:48px;font-weight:600;text-align:center;">The World Is Built On MEAT.</p>
-    <p style="font-size:14px;color:rgba(247,243,236,0.75);margin-top:6px;text-align:center;">People. Purpose. Action. Connection.</p>
-    <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:clamp(16px,2.2vw,19px);color:var(--cream);text-align:center;margin-top:16px;">We will be the MEAT map for everyday lives.</p>
-    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:rgba(247,243,236,0.75);max-width:480px;margin:20px auto 0;line-height:1.7;text-align:center;">"MEAT helps people know what to do now, what to do next, and who I can do it with."</p>
-    <p style="font-size:13.5px;color:rgba(247,243,236,0.75);max-width:480px;margin:16px auto 0;line-height:1.8;text-align:center;">MEAT should be easier to use than the life problem it's helping you solve. If opening the app ever feels like work, that's on us to fix.</p>
+    <p style="font-size:13.5px;color:rgba(247,243,236,0.75);max-width:520px;margin:32px auto 0;line-height:1.8;text-align:center;">MEAT Empire is currently early-stage. Sharing an idea is an invitation to a conversation, not a promise of funding, partnership, services, or launch.</p>
   </div>
 </div>
 
 <footer>
   <div style="margin-bottom:24px;">
-    <img src="meat-logo-gold.png" alt="" style="height:64px;width:64px;object-fit:contain;opacity:0.7;"/>
+    <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Crect%20x='4'%20y='4'%20width='92'%20height='92'%20rx='18'%20fill='%23fff8ef'%20stroke='%23d9ad43'%20stroke-width='3'/%3E%3Cpath%20d='M22%2075V25l28%2031%2028-31v50'%20fill='none'%20stroke='%23c89528'%20stroke-width='9'%20stroke-linecap='round'%20stroke-linejoin='round'/%3E%3Cpath%20d='M35%2075V53M65%2075V53M35%2064h30'%20fill='none'%20stroke='%238f6919'%20stroke-width='4'/%3E%3C/svg%3E" alt="" style="height:64px;width:64px;object-fit:contain;opacity:0.7;"/>
   </div>
-  <h2 class="section-title">You grow. We grow. We grow together.</h2>
-  <p>MEAT Empire is infrastructure for every creator. Whether you're scared or confident. Experienced or brand new.</p>
-  <p style="margin-top:28px;"><strong>Your ideas remain yours. Your economics are transparent. Your growth compounds for everyone.</strong></p>
+  <h2 class="section-title">You grow. We learn. We build thoughtfully.</h2>
+  <p>MEAT Empire is being built for people at the beginning—whether they are confident, uncertain, experienced, or brand new.</p>
+  <p style="margin-top:28px;"><strong>Clear expectations. Honest feedback. Respect for the person behind the idea.</strong></p>
   <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:clamp(20px,2.8vw,26px);color:var(--cream);margin-top:24px;">Let's MEAT.</p>
   <div style="margin:48px auto 0;max-width:860px;padding-top:36px;border-top:1px solid var(--border-color);">
     <p style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;opacity:.7;margin-bottom:8px;">The MEATVerse</p>
-    <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:15px;color:var(--cream);margin-bottom:20px;">The connected world of MEAT — built around real people, real life, and real progress. 💚</p>
+    <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:15px;color:var(--cream);margin-bottom:20px;">One mission, with each part serving a clear role. 💚</p>
     <div style="display:flex;gap:32px;justify-content:center;flex-wrap:wrap;">
       <a href="https://meathospitalitygroup.com" target="_blank" rel="noopener" style="color:var(--cream);text-decoration:none;font-size:14px;font-weight:500;">MEAT Hospitality Group →</a>
       <a href="https://meatverse.co" target="_blank" rel="noopener" style="color:var(--cream);text-decoration:none;font-size:14px;font-weight:500;">MEATVerse →</a>
       <a href="https://storemhg.com" target="_blank" rel="noopener" style="color:var(--cream);text-decoration:none;font-size:14px;font-weight:500;">MEAT Hospitality Group Store →</a>
     </div>
-    <p style="font-size:13px;opacity:.7;line-height:1.7;max-width:520px;margin:22px auto 0;">MEAT Empire is the build layer. MEATVerse connects you to everything MEAT can become. MEAT Hospitality Group is proof it works.</p>
+    <p style="font-size:13px;opacity:.7;line-height:1.7;max-width:520px;margin:22px auto 0;">MEAT Empire is the early creator initiative. The MEAT App is the practical starting point. MEATVerse is the long-term vision.</p>
     <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:14px;color:rgba(247,243,236,.85);margin-top:20px;">MEAT — life organization as easy as MEATing. 💚</p>
     <p style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(247,243,236,.8);line-height:2;margin-top:20px;">Quality with purpose.<br>Priced for real life.<br>Built for people who keep going.</p>
   </div>
@@ -841,5 +894,15 @@ document.querySelectorAll('.modal').forEach(modal => {
 document.addEventListener('DOMContentLoaded', initializeDarkMode);
 </script>
 
+<script>
+(() => {const key='meat-app-color-theme', names={sunrise:'Sunrise',violet:'Violet',forest:'Forest',night:'Night'}; const saved=localStorage.getItem(key)||'sunrise'; document.documentElement.dataset.meatTheme=saved; const picker=document.createElement('div'); picker.className='meat-theme-picker'; picker.innerHTML=`<button class="meat-theme-button" type="button" aria-expanded="false"><span class="meat-theme-dot"></span><span class="meat-theme-name">${names[saved]}</span></button><div class="meat-theme-options" role="menu"><button class="meat-theme-option" data-theme="sunrise"><span class="meat-swatch" style="background:#e6b63f"></span>Sunrise</button><button class="meat-theme-option" data-theme="violet"><span class="meat-swatch" style="background:#7957c7"></span>Violet</button><button class="meat-theme-option" data-theme="forest"><span class="meat-swatch" style="background:#1e513c"></span>Forest</button><button class="meat-theme-option" data-theme="night"><span class="meat-swatch" style="background:#17100c"></span>Night</button></div>`; document.body.appendChild(picker); const toggle=picker.querySelector('.meat-theme-button'); toggle.addEventListener('click',()=>{picker.classList.toggle('open');toggle.setAttribute('aria-expanded',picker.classList.contains('open'))}); picker.querySelectorAll('[data-theme]').forEach(button=>button.addEventListener('click',()=>{const theme=button.dataset.theme;document.documentElement.dataset.meatTheme=theme;localStorage.setItem(key,theme);picker.querySelector('.meat-theme-name').textContent=names[theme];picker.classList.remove('open');toggle.setAttribute('aria-expanded','false')}));})();
+</script>
+<script>document.addEventListener('DOMContentLoaded',()=>{const picker=document.querySelector('.meat-theme-picker'),nav=document.querySelector('.nav-utils');if(picker&&nav)nav.appendChild(picker);});</script>
+<script id="meat-app-polish-script">
+document.addEventListener('DOMContentLoaded',()=>{const body=document.body,hero=document.querySelector('.hero'),nav=document.querySelector('.nav-utils'),footer=document.querySelector('footer'),hour=new Date().getHours();const greeting=hour<12?'Good morning':hour<17?'Good afternoon':'Good evening';if(hero&&!hero.querySelector('.meat-welcome')){const welcome=document.createElement('div');welcome.className='meat-welcome';welcome.innerHTML='<span class="meat-welcome-dot"></span><span>'+greeting+'. Your next step starts here.</span>';hero.insertBefore(welcome,hero.firstElementChild)}if(nav&&!document.querySelector('.meat-motion-toggle')){const motion=document.createElement('button');motion.type='button';motion.className='meat-motion-toggle';motion.setAttribute('aria-label','Toggle reduced motion');motion.title='Reduce motion';motion.innerHTML='◌<span class="meat-control-label"> Motion</span>';const reduced=localStorage.getItem('meat-reduced-motion')==='true'||matchMedia('(prefers-reduced-motion: reduce)').matches;body.classList.toggle('meat-reduced-motion',reduced);motion.setAttribute('aria-pressed',String(reduced));motion.addEventListener('click',()=>{const next=!body.classList.contains('meat-reduced-motion');body.classList.toggle('meat-reduced-motion',next);localStorage.setItem('meat-reduced-motion',String(next));motion.setAttribute('aria-pressed',String(next))});nav.appendChild(motion)}if(nav&&!document.getElementById('a11yToggle')){const text=document.createElement('button');text.type='button';text.className='meat-text-toggle';text.textContent='Aa';text.setAttribute('aria-label','Toggle larger text');text.addEventListener('click',()=>{const next=!body.classList.contains('meat-large-text');body.classList.toggle('meat-large-text',next);localStorage.setItem('meat-large-text',String(next));text.setAttribute('aria-pressed',String(next))});const large=localStorage.getItem('meat-large-text')==='true';body.classList.toggle('meat-large-text',large);text.setAttribute('aria-pressed',String(large));nav.appendChild(text)}if(footer&&!footer.querySelector('.meat-signoff')){const signoff=document.createElement('p');signoff.className='meat-signoff';signoff.textContent='Come as you are. Keep moving forward.';footer.appendChild(signoff)}const targets=[...document.querySelectorAll('.section,.proof-box,.story-card,.process-step,.collab-card,.activity-item,.event-snapshot')];if(!body.classList.contains('meat-reduced-motion')&&'IntersectionObserver'in window){body.classList.add('meat-motion-ready');targets.forEach(el=>el.classList.add('meat-reveal'));const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('meat-visible');observer.unobserve(entry.target)}}),{threshold:.08});targets.forEach(el=>observer.observe(el))}else targets.forEach(el=>el.classList.add('meat-visible'))});
+</script>
+<script id="meat-site-audit-fixes">
+document.addEventListener('DOMContentLoaded',()=>{document.body.classList.remove('light-mode','dark-mode');localStorage.removeItem('meatempire-theme');const logo='data:image/svg+xml,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect x="4" y="4" width="92" height="92" rx="18" fill="#fff8ef" stroke="#d9ad43" stroke-width="3"/><path d="M22 75V25l28 31 28-31v50" fill="none" stroke="#c89528" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/><path d="M35 75V53M65 75V53M35 64h30" fill="none" stroke="#8f6919" stroke-width="4"/></svg>');document.querySelectorAll('img[src="meat-logo-gold.png"]').forEach(img=>{img.src=logo});const picker=document.querySelector('.meat-theme-picker'),toggle=picker?.querySelector('.meat-theme-button'),options=picker?[...picker.querySelectorAll('[data-theme]')]:[];const sync=()=>options.forEach(o=>{const active=o.dataset.theme===document.documentElement.dataset.meatTheme;o.setAttribute('role','menuitemradio');o.setAttribute('aria-checked',String(active))});sync();options.forEach(o=>o.addEventListener('click',sync));document.addEventListener('click',e=>{if(picker&&!picker.contains(e.target)){picker.classList.remove('open');toggle?.setAttribute('aria-expanded','false')}});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&picker){picker.classList.remove('open');toggle?.setAttribute('aria-expanded','false');toggle?.focus()}})});
+</script>
 </body>
 </html>
