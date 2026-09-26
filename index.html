@@ -343,7 +343,15 @@
 .hero-body{max-width:700px!important;margin-left:auto!important;margin-right:auto!important}
 .hero [style*="font-size:12px"][style*="text-transform:uppercase"]{font-size:clamp(19px,3vw,28px)!important;text-transform:none!important;letter-spacing:.01em!important;color:#bcefff!important}
 </style>
-<style id="mhg-symbol-sizing">.nav-corner-brand img,.nav-center-m,footer img,.hero-monogram{object-fit:contain!important;border-radius:12px;opacity:1!important}.nav-corner-brand img,.nav-center-m{min-width:40px;min-height:40px}.hero-monogram{width:120px!important;height:120px!important}footer img{width:80px!important;height:80px!important}</style></head>
+<style id="mhg-symbol-sizing">.nav-corner-brand img,.nav-center-m,footer img,.hero-monogram{object-fit:contain!important;border-radius:12px;opacity:1!important}.nav-corner-brand img,.nav-center-m{min-width:40px;min-height:40px}.hero-monogram{width:120px!important;height:120px!important}footer img{width:80px!important;height:80px!important}</style><style id="meat-nav-spacing-fix">
+@media (max-width: 700px) {
+  .nav-center { padding-right: 118px !important; box-sizing: border-box; }
+}
+@media (max-width: 390px) {
+  .nav-center { padding-right: 96px !important; }
+}
+</style>
+</head>
 <body>
 
 <input class="native-theme-input" type="radio" name="meat-native-theme" id="native-theme-electric" checked/>
